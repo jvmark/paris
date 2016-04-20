@@ -48,13 +48,14 @@ var service = function(baseURL, authInfo) {
         jar: j,
         method: 'POST',
         form: {
-          login_name: username,
-          pswd: password
+          username: username,
+          password: password
         }
       }, function(error, response, body) {
         if (error) {
           return deffered.reject(error);
         }
+
         if (response.statusCode != 200) {
           return deffered.reject(new Error('请求错误 ' + response.statusCode));
         }
@@ -62,24 +63,14 @@ var service = function(baseURL, authInfo) {
         if (result.status != 1) {
           return deffered.reject(new Error(result.message));
         }
+
         var cookie_string = j.getCookieString(url); // "key1=value1; key2=value2; ..."
-        console.log(cookie_string);
-
-        var regex = /sessionid\=([\w\d\-]*)\;*/;
-        var match = cookie_string.match(regex);
-        var sessionid = match[1];
-
-        regex = /auth\_token\=([\w\d\-]*)\;*/;
-        match = cookie_string.match(regex);
-        auth_token = match[1];
 
         deffered.resolve({
           status: result.status,
           data: result.data,
           auth: {
             type: 'cookie',
-            sessionid: sessionid,
-            auth_token: auth_token
           }
         });
       })
