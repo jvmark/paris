@@ -1,0 +1,18 @@
+.ctr-jflow-slides p{
+margin: 0;
+padding: 0 1em;
+font-size: 1.5em;
+position: relative;
+top: -50px;
+line-height: 40px;
+height: 50px;
+background: black;
+color: white;
+font-family:tahoma,arial,sans-serif,'\5FAE\8F6F\96C5\9ED1';
+opacity: .7;
+filter:alpha(opacity=70);
+}
+.ctr-jflow-controller{position:relative;z-index:2;float:right;margin:-22px 8px 0 0;color:#fff;cursor:pointer}
+
+.ctr-jflow-controller .jFlowSelected{font-weight:bold;font-size:14px;font-weight:bold;}
+

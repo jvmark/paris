@@ -1,0 +1,22 @@
+/* 
+@说明：这里是一些基于 tabswitch 组件的幻灯样式 
+@作者：balibell 
+@时间：2011-05-28
+@依赖： /js/core/plugin/tabswitch.js
+*/
+
+/* swconts-fade */
+	/* 内容块容器定宽定高 */
+.swconts-fade{width:360px;height:220px;}
+.swcont{width:100%;height:100%;background-color:#fff;text-align:center;}
+.swcont p{position:absolute;z-index:9;width:100%;height:40px;left:0;bottom:0;padding:0;margin:0;text-indent:1em;line-height: 40px;text-align:left;background:black;color:white;font-size:1.5em;font-family:'\5FAE\8F6F\96C5\9ED1';opacity:.7;filter:alpha(opacity=70);}
+.swconts-fade img{display:block;margin:0 auto;border:0 none}
+	/* 初始隐藏内容块 */
+.swcont{display:none;}
+	/* 暂停提示 */
+#swpaused{position:absolute;z-index:10;top:0;left:0;width:100%;height:0px;padding:0;margin:0;overflow:hidden;text-indent:8px;line-height:22px;font-family:arial;font-size:12px;opacity:.7;filter:alpha(opacity=70);background-color:#000;color:#fff}
+
+.swtr-fade{position:relative;z-index:32;float:left;+display:inline;width:54px;margin:-18px 0 0 12px;}
+.swtr-fade a{float:left;width:8px;height:8px;overflow:hidden;margin:4px 4px 0 0;background-color:#f1f1f1;text-indent:-9999px;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
+.swtr-fade a.cur{background-color:#20B3E7;}
+

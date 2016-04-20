@@ -1,0 +1,22 @@
+<!-- Sidebar Separator do not remove -->
+<div id="da-sidebar-separator"></div>
+<!-- Sidebar -->
+<div id="da-sidebar">
+  <!-- Navigation Toggle for < 480px -->
+  <div id="da-sidebar-toggle"></div>
+  <div id="da-main-nav" class="btn-container">
+    <ul  ng-controller="buySidebarCtrl">
+      <li ng-model=sidebarData ng-repeat="arr in sidebarData">
+        <a href="javascript:;">
+          <!-- Icon Container -->
+          <span class="da-nav-icon">
+            <i class="icon-edit"></i>
+          </span> {{arr.name}}
+        </a>
+        <ul>
+          <li ng-repeat="innerarr in arr.items"><a href="/#{{innerarr.url}}">{{innerarr.name}}</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>

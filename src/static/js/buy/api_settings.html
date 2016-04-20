@@ -1,0 +1,73 @@
+<style type="text/css">
+.pg-brands {
+  position: absolute;
+  z-index: 9999;
+  height: auto;
+  width: 200px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  width: 100%;
+}
+
+#da-content-area .pg-brands-query {
+  cursor: pointer;
+  width: 100%;
+  margin-right: 12px;
+}
+
+.pg-banner-table td:first-child {
+  display: block;
+  background-color: #eee;
+  float: left;
+  padding-top: 10px;
+}
+
+.pg-banner-table td label {
+  width: 20%;
+}
+
+.pg-banner-table td input {
+  width: 70%;
+  display: block;
+}
+</style>
+<div id="da-wrapper">
+  <!-- 头部 -->
+  <!-- 身体 -->
+  <div id="da-content" ng-click="showBrands = false;">
+    <!-- Container -->
+    <div class="da-container clearfix">
+      <!-- 右侧内容 -->
+      <div id="da-content-wrap" class="clearfix">
+        <div id="da-content-area">
+          <div class="span12" ng-show="page==1" ng-init="page=1;">
+            <div class="da-panel">
+              <div class="da-panel-header">
+                <span class="da-panel-title">
+                    api 配置
+                </span>
+              </div>
+              <div class="da-form da-panel-content da-form-container">
+                <form class="da-form da-form-inline">
+                  <div class="da-form-row" style="padding-left: 0px;">
+                    <div class="span10">
+                      <label class="h-label span1">登录API</label>
+                      <input type="text" class="l" ng-model="settings.apiSettings.wwwAPI" style="cursor: pointer;  width: 60%;margin-right: 12px;" />
+                    </div>
+                    <div class="span10">
+                      <label class="h-label span1">有料后台API</label>
+                      <input type="text" class="l" ng-model="settings.apiSettings.buyAdminAPI" style="cursor: pointer;  width: 60%;margin-right: 12px;" />
+                    </div>
+                  </div>
+                  <div class="btn-row">
+                    <input value="保存" type="submit" class="btn btn-success" ng-click="updateSettings();" style="float:left;">
+                    <input value="取消" type="submit" class="btn" ng-click="cancelUpdate();" style="float:left;">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="doctor with angular base">
+  <meta name="author" content="hugin">
+  <title>Buy管理后台</title>
+    <!-- build:css ./static/css/base.css -->
+    <link rel="stylesheet" type="text/css" href="./static/js/libs/bootstrap/2.3.2/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./static/js/libs/dl/2.0.0/css/dandelion.theme.css">
+    <link rel="stylesheet" type="text/css" href="./static/fonts/glyphicons/style.css">
+    <link rel="stylesheet" type="text/css" href="./static/js/libs/dl/2.0.0/css/dandelion.min.css">
+    <link rel="stylesheet" type="text/css" href="./static/js/libs/jui/css/jquery.ui.all.css">
+    <link rel="stylesheet" type="text/css" href="./static/js/libs/jgrowl/jquery.jgrowl.css">
+    <link rel="stylesheet" type="text/css" href="./static/css/core/base.css">
+    <link rel="stylesheet" type="text/css" href="./static/css/core/comm/sugar-main.css">
+    <link rel="stylesheet" type="text/css" href="./static/css/core/part/prompt.css">
+    <link rel="stylesheet" type="text/css" href="./static/css/core/part/confirm.css">
+    <link rel="stylesheet" type="text/css" href="./static/css/core/hrset.css">
+    <link rel="stylesheet" type="text/css" href="./static/js/libs/ngDialog/css/ngDialog.min.css">
+    <link rel="stylesheet" type="text/css" href="./static/js/libs/ngDialog/css/ngDialog-theme-default.min.css">
+    <link rel="stylesheet" type="text/css" href="./static/css/buy/buy.css">
+    <!-- endbuild -->
+</head>
+
+
+<body ng-app="huginApp">
+  <div ng-view></div>
+   
+    <!-- build:js ./static/js/base.js -->
+    <script type="text/javascript" src="./static/js/libs/jquery/1.8.3/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="./static/js/libs/dl/2.0.0/js/dandelion.core.js"></script>
+    <script type="text/javascript" src="./static/js/libs/duitang/confirm.js"></script>
+    <script type="text/javascript" src="./static/js/libs/duitang/pack.js"></script>
+    <script type="text/javascript" src="./static/js/libs/blockui/blockui.js"></script>
+    <script type="text/javascript" src="./static/js/libs/duitang/ajaxspy.js"></script>
+    <script type="text/javascript" src="./static/js/libs/duitang/sugar-main.js"></script>
+    <script type="text/javascript" src="./static/js/libs/duitang/browser.js"></script>
+    <script type="text/javascript" src="./static/js/libs/duitang/history.js"></script>
+    <script type="text/javascript" src="./static/js/libs/duitang/form.js"></script>
+    <script type="text/javascript" src="./static/js/libs/duitang/browser.js"></script>
+    <script type="text/javascript" src="./static/js/libs/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./static/js/libs/angular-route/angular-route.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js ./static/js/buy/buy.js -->
+    <script src="./static/js/libs/timepicker/jquery-ui-1.8.16.custom.min.js"></script>
+    <script src="./static/js/libs/timepicker/jquery-ui-timepicker-addon-and-zh.js"></script>
+    <!-- <script src="./static/js/part/form/jquery.form.min.js"></script> -->
+    <script src="./static/js/libs/papaParse/papaParse.js"></script>
+    <script src="./static/js/part/angular-paginator/angular-prevnextpaginator.js"></script>
+    <script src="./static/js/part/angular-paginator/angular-paginator.js"></script>
+    <script src="./static/js/libs/angular/angular-cookies.min.js"></script>
+    <!-- <script src="./static/libs/duitang/pack.js"></script> -->
+    <script src="./static/js/libs/ngDialog/js/ngDialog.min.js"></script>
+    <script src="./static/js/directive/imageUploadDirective.js"></script>
+    <script src="./static/js/directive/visualImgDirective.js"></script>
+    <script src="./static/js/buy/app.js"></script>
+    <script src="./static/js/services/baseService.js"></script>
+    <script src="./static/js/buy/buyService.js"></script>
+    <script src="./static/js/filter/baseFilter.js"></script>
+    <script src="./static/js/filter/transImgFilter.js"></script>
+    <script src="./static/js/directive/baseDirective.js"></script>
+    <script src="./static/js/directive/csvToJsonDirective.js"></script>
+    <script src="./static/js/directive/sortable.js"></script>
+    <script src="./static/js/buy/buyLogInOrOutController.js"></script>
+    <script src="./static/js/buy/buySidebarController.js"></script>
+    <script src="./static/js/buy/buyLoginController.js"></script>
+    <script src="./static/js/buy/buyOrderController.js"></script>
+    <script src="./static/js/buy/buyOrderDetailController.js"></script>
+    <script src="./static/js/buy/buyReturnOrderController.js"></script>
+    <script src="./static/js/buy/buyReturnAddController.js"></script>
+    <script src="./static/js/buy/buyReturnDetailController.js"></script>
+    <script src="./static/js/buy/shelvesController.js"></script>
+    <script src="./static/js/buy/buyShelvesEditController.js"></script>
+    <script src="./static/js/buy/buySupplierController.js"></script>
+    <script src="./static/js/buy/buySupplierCreateController.js"></script>
+    <script src="./static/js/buy/buySupplierUpdateController.js"></script>
+    <script src="./static/js/buy/buyPromotionController.js"></script>
+    <script src="./static/js/buy/buyPromotionUpdateController.js"></script>
+    <script src="./static/js/buy/buyOrderPayordersController.js"></script>
+    <script src="./static/js/buy/buyCouponCreateController.js"></script>
+    <script src="./static/js/buy/buyCouponSendController.js"></script>
+    <script src="./static/js/buy/buySettleController.js"></script>
+    <script src="./static/js/buy/buySettleDownloadController.js"></script>
+    <script src="./static/js/buy/buyAttributeController.js"></script>
+    <script src="./static/js/buy/buyCategoryController.js"></script>
+    <script src="./static/js/buy/buyCategoryAddController.js"></script>
+    <script src="./static/js/buy/buyCategoryEditController.js"></script>
+    <script src="./static/js/buy/buySPUListController.js"></script>
+    <script src="./static/js/buy/buySPUAddController.js"></script>
+    <script src="./static/js/buy/buySPUEditController.js"></script>
+    <script src="./static/js/buy/buyTicketUploadController.js"></script>
+    <script src="./static/js/buy/buySpuBrandAddController.js"></script>
+    <script src="./static/js/buy/buyBarcodeController.js"></script>
+    <script src="./static/js/buy/buyWelcomeController.js"></script>
+    <script src="./static/js/buy/buyAPISettingsController.js"></script>
+    <script src="./static/js/tools/toolSearchController.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

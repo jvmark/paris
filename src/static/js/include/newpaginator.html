@@ -1,0 +1,26 @@
+<!-- angular 分页组件 需要总数支持 -->
+<div class="pagination pagination-centered">
+  <ul class="pagecnt">
+    <li ng-if="nowpage > 1">
+      <a href="{{turnPage.prevPage}}">上一页</a>
+    </li>
+    <li ng-if="start_page != 1">
+      <a href="{{turnPage.firstPage}}">1</a>
+    </li>
+    <li class="ell" ng-if="start_page > 2">
+      <a href="javascript:;">...</a>
+    </li>
+    <li ng-repeat="page in pageList" ng-class=" page == nowpage ? 'active' : '' ">
+      <a href="{{baseurl}}?page={{page}}{{searcharg}}">{{page}}</a>
+    </li>
+    <li class="ell" ng-if="end_page < totalpage -1">
+      <a href="javascript:;">...</a>
+    </li>
+    <li  class="pagenum" ng-if="end_page != totalpage">
+      <a href="{{turnPage.lastPage}}">{{ totalpage }}</a>
+    </li>
+    <li ng-if="nowpage < totalpage">
+      <a href="{{turnPage.nextPage}}">下一页</a>
+    </li>
+  </ul>
+</div>

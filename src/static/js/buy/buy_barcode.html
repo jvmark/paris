@@ -1,0 +1,90 @@
+<div id="da-wrapper">
+  <!-- 头部 -->
+  <div ng-include src="'/static/js/buy/base_header.html'"></div>
+  <!-- 身体 -->
+  <div id="da-content">
+    <!-- Container -->
+    <div class="da-container clearfix">
+      <div ng-include src="'/static/js/buy/base_sidebar.html'"></div>
+      <!-- 右侧内容 -->
+      <div id="da-content-wrap" class="clearfix">
+        <div id="da-content-area">
+          <div class="span12">
+            <div class="da-panel">
+              <div class="da-panel-header">
+                <span class="da-panel-title">条码扫描</span>
+              </div>
+              <div class="da-panel-content da-form-container">
+                <form class="da-form" form="query" ng-model="status">
+                  <div class="da-form-inline">
+                    <div class="da-form-row">
+                      <p class="h-label">商品编码：</p>
+                      <div class="l span7">
+                        <input type="text" ng-keypress="searchKeyPress($event)" placeholder="填写商品编码" style="width:400px" ng-model="productID">
+                      </div>
+                    </div>
+                    <div class="da-form-row">
+                      <div class="l span4">
+                        <a href="javascript:;" ng-click="searchClick()" class="btn btn-primary">查询</a>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="da-panel">
+              <div class="da-panel-header">
+                <span class="da-panel-title">
+                    结果
+                </span>
+              </div>
+              <div class="da-form da-panel-content da-form-container">
+                <form class="da-form da-form-inline" ng-if="loading == true">
+                  <div class="da-form-row">
+                    <div id="da-ex-pba" class="animated blue ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="65">
+                      <div class="ui-progressbar-value ui-widget-header ui-corner-left" style="width: 100%;"></div>
+                    </div>
+                  </div>
+                </form>
+                <form class="da-form da-form-inline" ng-if="loading == false && spu != null">
+                    <div class="da-form-row">
+                    <label class="h-label span1">条码编号</label>
+                    <div class="l-span9" style="margin-left: 0px;">
+                      {{spu.productID}}
+                    </div>
+                  </div>
+                  <div class="da-form-row">
+                    <label class="h-label span1">SPU ID</label>
+                    <div class="l-span9" style="margin-left: 0px;">
+                      {{spu.id}}
+                    </div>
+                  </div>
+                  <div class="da-form-row">
+                    <label class="h-label span1">名字</label>
+                    <div class="l-span9" style="margin-left: 0px;">
+                      {{spu.name}}
+                    </div>
+                  </div>
+                  <div class="da-form-row">
+                    <div class="da-gallery photoSwipe">
+                      <ul>
+                        <li ng-repeat="picture in spu.pictures">
+                            <img src="{{picture}}" alt="">
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </form>
+                <form class="da-form da-form-inline" ng-if="loading == false && spu == null">
+                  <div class="da-form-row">
+                    没有找到该条码商品
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

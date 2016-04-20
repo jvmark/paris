@@ -1,0 +1,7 @@
+/********* 数据统计控件 ColumStat 相关 css 样式  ************/
+.SG-ColumStat ul{list-style:none;width:890px;zoom:1;margin:0 0 0 0;padding:0;}
+.SG-ColumStat li{height:23px;line-height:23px;margin:0;padding:0;+margin-bottom:-4px}
+.SG-ColumStat s{float:left;+display:inline;width:190px;text-decoration:none}
+.SG-ColumStat u{float:left;+display:inline;text-decoration:none;margin-left:7px;font-weight:bold}
+.SG-ColumStat i{float:right;+display:inline;margin-right:14px;font-style:normal;font-size:14px;font-weight:bold}
+.SG-ColumStat div.thecolum{width:1px;height:10px;margin:5px 0px 0px 14px;float:left;+display:inline;overflow:hidden;border:1px solid #c00101;background-color:#d00;}

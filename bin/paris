@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cd "$(dirname "$0")"
+
+if [ $2 ] && [ $3 ] 
+  then
+  npm run $1 -- $2 $3
+elif [ $2 ]
+  then
+  npm run $1 -- $2
+else
+  npm run $1
+fi

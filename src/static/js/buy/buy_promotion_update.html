@@ -1,0 +1,188 @@
+<style type="text/css">
+.rules{
+  border:none;
+  border-color: #fff;
+}
+.table .none-border,.table .none-border td{
+  border-bottom: 0px;
+  border-top: 0px;
+}
+</style>
+<div id="da-wrapper">
+  <!-- 头部 -->
+  <div ng-include src="'/static/js/buy/base_header.html'"></div>
+  <!-- 身体 -->
+  <div id="da-content">
+    <!-- Container -->
+    <div class="da-container clearfix">
+      <div ng-include src="'/static/js/buy/base_sidebar.html'"></div>
+      <!-- 右侧内容 -->
+      <div id="da-content-wrap" class="clearfix">
+        <div id="da-content-area">
+          <div class="span12">
+            <div class="da-panel">
+              <div class="da-panel-header">
+                <span class="da-panel-title">
+                                            <i class="icol-pencil"></i>
+                                            新建/修改优惠活动
+                                        </span>
+              </div>
+              <div class="da-panel-content da-form-container">
+                <form class="da-form da-form-inline">
+                  <table class="table">
+                    <tr>
+                      <td>
+                        <lable class="da-form-label">营销活动名称</lable>
+                      </td>
+                      <td>
+                        <input type="text" ng-model="item.tag_name" ng-disabled="isUpdate">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <lable class="da-form-label">绑定的商家ID</lable>
+                      </td>
+                      <td>
+                        <input type="text" ng-model="item.seller_id" ng-disabled="isUpdate">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <lable class="da-form-label">绑定的商家名 seller_name</lable>
+                      </td>
+                      <td>
+                        <input type="text" ng-model="item.seller_name" ng-disabled="isUpdate">
+                      </td>
+                    </tr>
+                    <tr >
+                      <td>
+                        <lable class="da-form-label">活动类型 promotion_type</lable>
+                      </td>
+                      <td>
+                        <select ng-model="item.promotion_type" ng-options="promotionType.value as promotionType.text for promotionType in promotionTypes"  class="span3"  ng-disabled="isUpdate">
+                        </select>
+                      </td>
+                    </tr>
+                    <tr class="none-border">
+                      <td>
+                        <lable class="da-form-label">作用目标类型 target_type</lable>
+                      </td>
+                      <td>
+                        <select class="span3" ng-model="item.target_type"  ng-disabled="isUpdate">
+                          <option value="0">0</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr class="none-border">
+                      <td>
+                        <lable class="da-form-label">优惠输出类型 output_type</lable>
+                      </td>
+                      <td>
+                        <select ng-model="item.output_type" ng-options="outputType.value as outputType.text for outputType in outputTypes"  class="span3"  ng-disabled="isUpdate">
+                        </select>
+                      </td>
+                    </tr>
+                    <tr  class="none-border">
+                      <td>
+                        <lable class="da-form-label">绑定的inventory_id</lable>
+                      </td>
+                      <td>
+                        <input type="text" ng-model="item.inventory_id">
+                      </td>
+                    </tr>
+                    <!-- 商家满减 -->
+                    <tr ng-show="item.promotion_type == 0" class="none-border">
+                      <td>
+                        <lable class="da-form-label" style="float:left">规则 rules</lable>
+                        <div style="width:20px;height:20px;background:url('http://img4q.duitang.com/uploads/people/201508/31/20150831172927_ZyWfr.png');background-size:cover;cursor:pointer;float:left" ng-click="addRule()"><div>
+                      </td>
+                      <td>
+                      <table class="rules">
+                        <tr>
+                          <th>条件</th>
+                          <th>减去金额</th>
+                          <th>结算页文案</th>
+                          <th>购物车页文案</th>
+                          <th></th>
+                        </tr>
+                        <tr ng-repeat="rule in item.rules" style="padding:5px;border-bottom:1px solid #ddd;">
+                          <td><input type="text" ng-model="rule[0]" style="width:230px;" ng-disabled="isUpdate"></td>
+                          <td><input type="text" ng-model="rule[1]" style="width:50px;" ng-disabled="isUpdate"></td>
+                          <td><input type="text" ng-model="rule[2]" style="width:150px;" ng-disabled="isUpdate"></td>
+                          <td><input type="text" ng-model="rule[3]" ng-disabled="isUpdate"></td>
+                          <td><div style="width:20px;height:20px;background-size:cover;background:url('http://img4q.duitang.com/uploads/people/201508/31/20150831175107_fCBWv.png');background-size:cover;cursor:pointer;" ng-click="removeRule()"><div></td>
+                        </tr>
+                      </table>
+                      </td>
+                    </tr>
+                    <!-- 商家满减 -->
+                    <!-- 限时抢 -->
+                    <tr ng-show="item.promotion_type == 1" class="none-border">
+                      <td>
+                        <lable class="da-form-label" style="float:left" >规则 rules</lable>
+                      </td>
+                      <td>
+                      <table class="rules">
+                        <tr>
+                          <th>减去金额</th>
+                        </tr>
+                        <tr ng-repeat="rule in item.rules" style="padding:5px;border-bottom:1px solid #ddd;">
+                          <td><input type="text" ng-model="rule[0]" style="width:50px;" ng-disabled="isUpdate"></td>
+                        </tr>
+                      </table>
+                      <input type="button" value="计价" class="btn" ng-click="countSale()">
+                      <table class="goods" ng-show="goods.length>0">
+                        <tr>
+                          <th>商品ID</th>
+                          <th>商品名称</th>
+                          <th>折后价</th>
+                          <th>销售价</th>
+                        </tr>
+                        <tr ng-repeat="good in goods" style="padding:5px;border-bottom:1px solid #ddd;">
+                          <td>{{good.inventory_id}}</td>
+                          <td>{{good.inventory_name}}</td>
+                          <td>{{good.discounted_price}}</td>
+                          <td>{{good.sale_price}}</td>
+                        </tr>
+                      </table>
+                      </td>
+                    </tr>
+
+                    <!-- 限时抢 -->
+                    <tr>
+                      <td>
+                        <lable class="da-form-label">前台完整名称描述 full_desc</lable>
+                      </td>
+                      <td>
+                        <input type="text" ng-model="item.full_desc">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <lable class="da-form-label">生效时间</lable>
+                      </td>
+                      <td>
+                        <input type="text" id="timestamp1" ng-model="item.promotion_start_at"> ---
+                        <input type="text" id="timestamp2" ng-model="item.promotion_end_at">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="checkbox" class="l" ng-model="item.status">
+                        <lable>启用</lable>
+                      </td>
+                    </tr>
+                  </table>
+                  <div class="btn-row">
+                    <input type="submit" value="确认" class="btn btn-success" ng-click="update()">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+  </div>

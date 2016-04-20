@@ -1,0 +1,93 @@
+
+<div id="da-wrapper">
+  <!-- 头部 -->
+  <div ng-include src="'/static/js/buy/base_header.html'"></div>
+  <!-- 身体 -->
+  <div id="da-content">
+    <!-- Container -->
+    <div class="da-container clearfix">
+      <div ng-include src="'/static/js/buy/base_sidebar.html'"></div>
+      <!-- 右侧内容 -->
+      <div id="da-content-wrap" class="clearfix">
+        <div id="da-content-area">
+          <div class="span12">
+          	<div class="da-panel">
+              <div class="da-panel-header">
+                <span class="da-panel-title">
+                    优惠券发放
+                </span>
+              </div>
+              <div class="da-panel-content da-form-container" style="padding:20px 12px;">
+                <a href="#/coupon/create"><input value="+创建新任务" type="button" class="btn" style="margin-bottom: 12px;"></a>
+                <div class="da-panel">
+                  <div class="da-panel-header">
+                    <span class="da-panel-title">
+                        新优惠券
+                    </span>
+                  </div>
+                  <div class="da-panel-content da-form-container">
+                    <form class="da-form da-form-inline">
+                      <div class="da-form-row">
+                        <div class="span10">
+                          <label class="h-label ">发放用户：</label>
+                          <input type="text"  class="l" ng-model="user_ids" style="cursor: pointer;  width: 60%;margin-right: 12px;" placeholder="一次最多发放30个用户,逗号隔开">
+                          <input value="校验用户id" type="button" class="btn" style="margin-bottom: 12px;" ng-click="checkUIds(user_ids);">
+                          <div ng-show="user_message" style=" margin-left: 90px; color: red; line-height: 30px;">{{user_message}}</div>
+                        </div>
+                        <div class="span10">
+                          <label class="h-label ">优惠券ID：</label>
+                          <input type="text"  class="l" ng-model="template_ids" style="cursor: pointer;  width: 60%;margin-right: 12px;">
+                          <input value="校验优惠券" type="button" class="btn" style="margin-bottom: 12px;" ng-click="checkCIds(template_ids);">
+                          <div ng-show="coupon" style=" margin-left: 90px; color: red;">优惠券名称：<span ng-repeat="item in coupon">{{item.title}},</span></div>
+                        </div>
+                      </div>
+                      <div class="btn-row">
+                        <input value="确认发送" type="submit" class="btn btn-success" style="float:left;" ng-click="sendCoupon(user_ids,template_ids);">
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <table class="da-table checkable" style="margin-top: 12px;">
+                  <thead>
+                    <tr>
+                      <th>发送时间</th>
+                      <th>优惠券id</th>
+                      <th>优惠券名称</th>
+                      <th>发送用户</th>
+                      <th>操作人</th>
+                      <th>状态</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="item in history">
+                      <td>{{item.grant_date}}</td>
+                      <td><span ng-repeat="cId in item.template_ids">{{cId}},</span></td>
+                      <td>{{item.coupon_names}}</td>
+                      <td style="max-width: 200px; word-wrap: break-word;">{{item.userIdsStr}}</td>
+                      <td>{{item.operator}}</td>
+                      <td>
+                        <span ng-if="item.grant_status===1">发送成功</span>
+                        <span style="color:red" ng-if="item.grant_status===0">发送失败</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="da-panel">
+                  <div ng-include src="'/static/js/include/newpaginator.html'"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+

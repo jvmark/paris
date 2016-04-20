@@ -1,0 +1,105 @@
+
+<div id="da-wrapper">
+  <!-- 头部 -->
+  <div ng-include src="'/static/js/buy/base_header.html'"></div>
+  <!-- 身体 -->
+  <div id="da-content">
+    <!-- Container -->
+    <div class="da-container clearfix">
+      <div ng-include src="'/static/js/buy/base_sidebar.html'"></div>
+      <!-- 右侧内容 -->
+      <div id="da-content-wrap" class="clearfix">
+        <div id="da-content-area">
+          <div class="span12">
+          	<div class="da-panel">
+              <div class="da-panel-header">
+                <span class="da-panel-title">
+                    <i class="icol-pencil"></i>
+                    查询结算单
+                </span>
+              </div>
+              <div class="da-panel-content da-form-container">
+                <form class="da-form da-form-inline">
+                  <div class="da-form-row">
+                    <div class="l-span4">
+                      <label class="h-label ">供应商名称</label>
+                      <input type="text"  ng-model="supplier"  style="cursor: pointer;">
+                    </div>
+                    <div class="l-span4">
+                      <label class="h-label ">结算单生成日期</label>
+                      <input type="text" class="span12  timepicker form-control" id="timestamp" ng-model="genDate">
+                    </div>
+                    <div class="l-span4">
+                      <label class="h-label ">结算单状态</label>
+                      <select ng-model="selectOrderStatu" ng-options="orderStatu.value as orderStatu.text for orderStatu in orderStatus" style="margin-left: 10px;">
+                       </select>
+                    </div>
+                  </div>
+                  <div class="btn-row">
+                    <input value="查询" type="submit" class="btn btn-success" ng-click="query(0)" style="float:left;">
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="da-panel">
+              <div class="da-panel-header">
+                <span class="da-panel-title">
+                    查询结果
+                </span>
+              </div>
+              <div class="da-panel-content da-form-container" style="padding: 20px 12px;">
+              	<div class="da-form-row">
+	              	<span class="l" style="line-height: 30px;">{{pageLength}}个中{{idsLength}}个被选中</span>
+	              	<select ng-model="selectAction" ng-options="action.value as action.text for action in actions" style="margin-left: 10px;" class="l span2">
+	                </select>
+									<input value="执行" class="btn btn-primery span1" ng-click="implement()" class="l">
+									<span class="r">共{{data.total}}条记录</span>
+								</div>
+                <table class="da-table checkable" style="margin-top: 12px;">
+                  <thead>
+                    <tr>
+                    	<th><input type="checkbox"  ng-model="coAll"  ng-click="selectAllList(coAll)"></th>
+                      <th>生成时间</th>
+                      <th>结算时间</th>
+                      <th>结算单号</th>
+                      <th>状态</th>
+                      <th>供应商名称</th>
+                      <th>结算订单数量</th>
+                      <th>退货单数量</th>
+                      <th>结算金额</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="item in data.object_list">
+                    	<th><input type="checkbox"  ng-model="item.co"  ng-click="getSelectList(item.id,item.co)"></th>
+                      <td>{{item.gmt_create}}</td>
+                      <td>{{item.gmt_setttled}}</td>
+                      <td>{{item.id}}</td>
+                      <td>{{item.order_statu_text}}</td>
+                      <td>{{item.supplier_name}}</td>
+                      <td>{{item.settled_biz_order_nums}}</td>
+                      <td>{{item.settled_refund_order_nums}}</td>
+                      <td>{{item.settle_fee}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="da-form-row" style="margin-top:12px;">
+	              	<span class="l" style="line-height: 30px;">{{pageLength}}个中{{idsLength}}个被选中</span>
+	              	<select ng-model="selectAction" ng-options="action.value as action.text for action in actions" style="margin-left: 10px;" class="l span2">
+	                </select>
+									<input value="执行" class="btn btn-primery span1" ng-click="implement()" class="l">
+									<span class="r">共{{data.total}}条记录</span>
+								</div>
+              </div>
+              <div class="da-panel">
+		             <div ng-include src="'/static/js/include/newpaginator.html'"></div>
+		          </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+

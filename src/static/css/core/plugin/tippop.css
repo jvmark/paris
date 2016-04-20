@@ -1,0 +1,14 @@
+/* 
+@说明：这里是一些关于 tippop 组件的样式 
+@作者：balibell 
+@时间：2011-06-15
+@依赖： /js/core/plugin/tippop.js
+*/
+
+/* swconts-fade */
+.SG-tippop{line-height:17px;border:0 none;padding:6px;word-wrap:break-word;word-break:break-all;background-color:#fdf8c4;color:#666;box-shadow:0 2px 3px rgba(0,0,0,.1);border-radius:2px;}
+
+/*.SG-tippop .SG-close{float:right; width:20px; height:20px; overflow:hidden; margin:0 0 0; background:url(../../../../img/0/main.png?20120916) no-repeat -480px -1130px; text-indent:-100px;}*/
+
+.SG-tippop div.pr{position:relative;z-index:1000;}
+.SG-tippop div.pr u{position:absolute;width:12px;height:6px;top:-11px;left:2px;background:url(http://img4.duitang.com/uploads/people/201305/09/20130509145757_5W3cz.png) 0 0 no-repeat;}

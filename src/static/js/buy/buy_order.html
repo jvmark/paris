@@ -1,0 +1,138 @@
+<div id="da-wrapper">
+  <!-- 头部 -->
+  <div ng-include src="'/static/js/buy/base_header.html'"></div>
+  <!-- 身体 -->
+  <div id="da-content">
+    <!-- Container -->
+    <div class="da-container clearfix">
+      <div ng-include src="'/static/js/buy/base_sidebar.html'"></div>
+      <!-- 右侧内容 -->
+      <div id="da-content-wrap" class="clearfix">
+        <div id="da-content-area">
+          <div class="da-panel">
+            <div class="da-panel-header">
+              <span class="da-panel-title">
+                <i class="icon-list"></i> 订单管理
+              </span>
+            </div>
+            <div class="da-panel-content da-form-container">
+              <form class="da-form" form="query" ng-model="status">
+                <div class="da-form-inline">
+                  <div class="da-form-row">
+                    <p class="h-label">查询方式：</p>
+                    <div class="l-span2" style="margin-right: 10px;">
+                      <select ng-model="orderQueryMethod" ng-options="orderQuery.value as orderQuery.text for orderQuery in orderQueryMaps">
+                      </select>
+                    </div>
+                    <p class="h-label">查询 ID：</p>
+                    <div class="l span6">
+                      <input type="text" ng-model="bizOrderId" class="span8">
+                    </div>
+                  </div>
+                  <div class="da-form-row">
+                    <p class="h-label">时间条件：</p>
+                    <div class="l-span2" style="margin-right: 10px;">
+                      <select ng-model="orderTimeQueryMethod" ng-options="orderTimeQuery.value as orderTimeQuery.text for orderTimeQuery in orderTimeQueryMaps" >
+                      </select>
+                    </div>
+                    <div class="l span6">
+                      <input type="text" class="span12  timepicker form-control" placeholder="开始时间" id="timestamp1" ng-model="startDate">&nbsp;&nbsp;-&nbsp;&nbsp;
+                      <input type="text" class="span12 timepicker form-control" placeholder="结束时间" id="timestamp2" ng-model="endDate">
+                    </div>
+                    <div  class="l span12" style="margin-left: 0px;  margin-top: 10px;">
+                      <p class="h-label">订单状态:</p>
+                      <div class="l span2">
+                        <select ng-model="orderStatus" ng-options="order.value as order.text for order in orderMaps" style="margin-left: 10px;">
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="da-form-row">
+                    <div class="l span4">
+                      <!-- <a href="javascript:;" ng-click="queryOrder()" class="btn" id="queryOrder">查询</a> -->
+                      <a href="#/order/?page=1&limit={{limits.value}}&{{orderQueryMethod}}={{bizOrderId}}&timeType={{orderTimeQueryMethod}}&startDate={{startDate}}&endDate={{endDate}}&orderStatus={{orderStatus}}" class="btn" id="queryOrder">查询</a>
+                      <a href="javascript:;" class="btn btn-default" id="pg-get-count" ng-click="getCount()">获取数量</a>
+                    </div>
+                    <div class="l span4">
+                      <a href="javascript:;" class="btn btn-default" id="pg-export-data" ng-click="orderOut()">导出订单表</a>
+                      <a href="javascript:;" class="btn btn-default" id="pg-export-trade-data" ng-click="tradeOut()">导出交易表</a>
+                    </div>
+                  </div>
+                  <div class="da-form-row">
+                    <span class="span2">导入订单回传表</span>
+                    <input type="file" id="csv-file" name="files">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+
+
+
+          <div class="da-panel collapsible">
+            <div class="da-panel-header">
+              <span class="da-panel-title">
+                <i class="icol-grid"></i>
+                查询结果
+              </span>
+              <div class="da-panel-toggler"><span></span></div>
+            </div>
+            <div class="da-panel-inner-wrap">
+              <div class="da-panel-content da-table-container">
+                <div id="da-ex-datatable-default_wrapper" class="dataTables_wrapper" role="grid">
+                  <div id="da-ex-datatable-default_length" class="dataTables_length">
+                    <label>根据
+                      <select size="1" name="da-ex-datatable" aria-controls="da-ex-datatable-default" ng-options="v for v in limits.values"  ng-model="limits.value" >
+                      </select>条查询
+                    </label>
+                  </div>
+                  <table class="da-table checkable">
+                    <thead>
+                      <tr>
+                        <th>相关操作</th>
+                        <th>订单号</th>
+                        <th>订单状态</th>
+                        <th>供应商名称</th>
+                        <th>商品名称</th>
+                        <th>交易号</th>
+                        <th>堆糖ID</th>
+                        <th>快递公司</th>
+                        <th>运单号</th>
+                        <th>创建时间</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="order in orders">
+                        <td>
+                          <a ng-href="#/order/detail?main_id={{order.biz_order_id}}&sub_id={{order.sub_biz_order_id}}" ng-show="order.sub_biz_order_id" target="_blank">详情</a>
+                          <a href="javascript:;" ng-click="getFeedbackLink(order.biz_order_id)">反馈</a>
+                          <span>{{order.order_stspantus}}</span>
+                        </td>
+                        <td>{{order.biz_order_id}}</td>
+                        <td>{{order.order_status}}</td>
+                        <td>{{order.supplier_name}}</td>
+                        <td>{{order.inventory_name}}</td>
+                        <td>{{order.out_pay_no}}</td>
+                        <td>{{order.buyer_uid}}</td>
+                        <td>{{order.logistics_name}}</td>
+                        <td><a target="_blank" href="http://m.kuaidi100.com/index_all.html?type={{order.logistics_name}}&postid={{order.logistics_ticket}}">{{order.logistics_ticket}}</td>
+                        <td>{{order.gmt_create}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="da-panel">
+            <div ng-include src="'/static/js/include/prevnextpaginator.html'"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+</div>

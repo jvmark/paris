@@ -1,0 +1,66 @@
+<!-- 头部 -->
+<style type="text/css">
+  .login{
+    padding: 20px;
+    width: 400px;
+    height: 300px;
+    text-align: center;
+  }
+  .log_name,.log_pswd,.log_btn {
+    display: block;
+    margin: 0 auto;
+  }
+  .log_pswd {
+    margin-top: 20px;
+  }
+  .log_btn {
+    margin-top: 20px;
+  }
+</style>
+  <div id="da-header" ng-controller="buyLogInOrOutCtrl">
+    <!-- 上层 -->
+    <div id="da-header-top">
+      <!-- Container -->
+      <div class="da-container clearfix">
+        <!-- Logo Container. All images put here will be vertically centere -->
+        <div id="da-logo-wrap">
+          <div id="da-logo">
+            <div id="da-logo-img">
+              <a href="/">
+              <img src="/static/images/logo.png" alt="堆糖"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 下层 -->
+    <div id="da-header-bottom">
+      <!-- Container -->
+      <div class="da-container clearfix">
+        <div id="da-search">
+          <form>
+            <input type="text" class="search-query" placeholder="搜索...">
+          </form>
+        </div>
+        <!-- 面包屑导航 -->
+        <div id="da-breadcrumb">
+          <ul>
+            <li class="active">
+              <a href="/">
+                <i class="icon-home"></i>
+                后台首页
+              </a>
+            </li>
+            <li>
+              <a href="/tools/power_search/">
+                <i class="icon-home"></i>
+                小工具
+              </a>
+            </li>
+          </ul>
+        </div>
+        <a target="_blank" ng-show="!isLogin" href="/#/login" style="display: inline-block;width: 50px;float: right;transform: translate3d(0,-29px,0);font-size: 14px;">登录</a>
+        <div ng-show="isLogin" style="display: inline-block;width: 150px;float: right;transform: translate3d(0,-29px,0);font-size: 14px;" ng-click="logout()">{{username}},<a href="javascript:;">退出</a></div>
+      </div>
+    </div>
+  </div>

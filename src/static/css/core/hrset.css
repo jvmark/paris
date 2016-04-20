@@ -1,0 +1,9 @@
+.h-label{
+  height: 30px;
+  line-height: 30px;
+  margin-right: 20px;
+  float: left;
+}
+a.btn-primary{
+  color:#fff;
+}

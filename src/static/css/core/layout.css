@@ -1,0 +1,27 @@
+.layer{zoom:1;width:100%;margin:0 auto;}
+.layer:after{content:"\0020";display:block;height:0;clear:both;}
+.tube{float:left;+display:inline;+overflow:hidden;line-height:0;margin-right:8px;}
+.block{zoom:1;width:100%;line-height:1.5;margin-bottom:32px;}
+.block:after{content:"\0020";display:block;height:0;clear:both;overflow:hidden;}
+
+
+.tube-a{width:628px;margin-right:20px;}
+.tube-b{width:288px;padding-left:24px}
+.tube .blockmb{margin-bottom:20px;}
+
+
+/* 全宽的 layer */
+.layer-full .tube{float:left;width:100%;margin-right:0}
+
+/* layer-1to5 */
+.layer-1to5 .tube-a{width:152px;padding-right:0}
+.layer-1to5 .tube-b{width:792px;padding-left:0;}
+
+/* overflow:hidden 是修复ff 下异常的留白 */
+/* height min-height 是给定页面最低的高度 */
+html{background-color:#fbfbfb;}
+body{background-color:#fff}
+#content{width:960px;margin:0 auto;background-color:#fff;}
+#content{_height:600px;min-height:600px;margin:0 auto;padding-bottom:24px}
+
+

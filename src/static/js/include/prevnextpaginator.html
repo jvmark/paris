@@ -1,0 +1,12 @@
+<!-- angular 分页组件  只提供上下翻页 -->
+<div class="pagination pagination-centered">
+  <ul class="pagecnt">
+    <li ng-if="turnPage.hasprev == true">
+      <a href="{{turnPage.prevPage}}">上一页</a>
+    </li>
+    <li ng-if="turnPage.hasnext == true">
+      <a href="{{turnPage.nextPage}}">下一页</a>
+    </li>
+    <li><a href="javascript:;" style="background: transparent;border:none;color:#000;">当前是第{{nowpage}}页</a></li>
+  </ul>
+</div>

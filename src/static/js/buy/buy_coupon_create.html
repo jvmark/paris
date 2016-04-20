@@ -1,0 +1,170 @@
+<style type="text/css">
+html,
+body {
+  height: 100%;
+}
+
+.promotion-detail {
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0
+}
+.detail-table tr,.detail-table td{
+  border:  1px solid #aaa;
+  padding: 5px;
+  font-size: 14px;
+}
+</style>
+<div id="da-wrapper">
+  <!-- 头部 -->
+  <div ng-include src="'/static/js/buy/base_header.html'"></div>
+  <!-- 身体 -->
+  <div id="da-content">
+    <!-- Container -->
+    <div class="da-container clearfix">
+      <div ng-include src="'/static/js/buy/base_sidebar.html'"></div>
+      <!-- 右侧内容 -->
+      <div id="da-content-wrap" class="clearfix">
+        <div id="da-content-area">
+          <div>
+            <div class="da-panel">
+              <div class="da-panel-header">
+                <span class="da-panel-title">
+                    优惠券生成
+                </span>
+              </div>
+              <div class="da-panel-content da-form-container" style="padding: 20px 12px;">
+                <div class="da-panel">
+                  <div class="da-panel-header">
+                    <span class="da-panel-title">
+                        <i class="icol-pencil"></i>
+                        创建优惠券
+                    </span>
+                  </div>
+                  <div class="da-panel-content da-form-container">
+                    <form class="da-form da-form-inline">
+                      <div class="da-form-row">
+                        <div class="l-span6">
+                          <label class="h-label span2">标题</label>
+                          <input type="text"  class="span4" ng-model="newCoupon.title"  style="cursor: pointer;">
+                        </div>
+                        <div class="l-span6">
+                          <label class="h-label span2">副标题</label>
+                          <input type="text" class="span4" ng-model="newCoupon.subtitle"  style="cursor: pointer;">
+                        </div>
+                        <div class="l-span6">
+                          <label class="h-label span2">抵用金额</label>
+                          <input type="text"  class="span4" ng-model="newCoupon.discount"  style="cursor: pointer;" placeholder="10元＝1000" >
+                        </div>
+                        <div class="l-span6">
+                          <label class="h-label span2">使用门槛</label>
+                          <input type="text" class="span4" ng-model="newCoupon.rules"  style="cursor: pointer;" placeholder="#payTotalFee&gt;0为无门槛">
+                        </div>
+                      </div>
+                      <div class="da-form-row">
+                        <div class="l-span6">
+                          <label class="h-label span2">领取开始时间</label>
+                          <input type="text" class="span4  timepicker form-control" id="timestamp1"  ng-model="newCoupon.receive_start_time" >
+                        </div>
+                        <div class="l-span6">
+                          <label class="h-label span2">领取结束时间</label>
+                          <input type="text" class="span4  timepicker form-control" id="timestamp2"  ng-model="newCoupon.receive_end_time">
+                        </div>
+                        <div class="l-span6">
+                          <label class="h-label span2">活动开始时间</label>
+                          <input type="text" class="span4  timepicker form-control" id="timestamp3"  ng-model="newCoupon.event_start_time">
+                        </div>
+                        <div class="l-span6">
+                          <label class="h-label span2">活动结束时间</label>
+                          <input type="text" class="span4  timepicker form-control" id="timestamp4"  ng-model="newCoupon.event_end_time">
+                        </div>
+                        <div class="l-span6">
+                          <label class="h-label span2">超时时间</label>
+                          <input type="text" class="span4" ng-model="newCoupon.expire_time"  style="cursor: pointer;" placeholder="以秒为单位，填0为不限制">
+                        </div>
+                      </div>
+                      <div class="da-form-row">
+                        <div class="l-span6">
+                          <label class="h-label span2">发放总数</label>
+                          <input type="text"  class="span4" ng-model="newCoupon.coupon_all_count"  style="cursor: pointer;">
+                        </div>
+                        <div class="l-span6">
+                          <label class="h-label span2">单日领取上限</label>
+                          <input type="text" class="span4" ng-model="newCoupon.coupon_daily_count"  style="cursor: pointer;">
+                        </div>
+                        <div class="l-span6">
+                          <label class="h-label span2">单人领取上限</label>
+                          <input type="text"  class="span4" ng-model="newCoupon.user_all_count"  style="cursor: pointer;">
+                        </div>
+                        <div class="l-span6">
+                          <label class="h-label span2">单人单日领取上线</label>
+                          <input type="text" class="span4" ng-model="newCoupon.user_daily_count"  style="cursor: pointer;">
+                        </div>
+                      </div>
+                      <div class="btn-row">
+                        <input value="+创建优惠券" type="submit" class="btn btn-success" ng-click="createCoupon()" style="float:left;">
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div style="overflow: scroll;">
+                  <table class="da-table checkable" style="margin-top: 12px;">
+                    <thead>
+                      <tr>
+                        <th>操作</th>
+                        <th>优惠券ID</th>
+                        <th>标题</th>
+                        <th>副标题</th>
+                        <th>剩余数量</th>
+                        <th>发放总数</th>
+                        <th>单日领取上限</th>
+                        <th>单人领取上限</th>
+                        <th>单人单日领取上线</th>
+                        <th>抵用面额</th>
+                        <th>使用门槛</th>
+                        <th>领取开始时间</th>
+                        <th>领取结束时间</th>
+                        <th>活动开始时间</th>
+                        <th>活动结束时间</th>
+                        <th>超时时间</th>
+                        <th>创建人</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="item in couponList">
+                        <td><a href="{{item.url}}" target=_blank>页面链接</a></td>
+                        <td>{{item.id}}</td>
+                        <td>{{item.title}}</td>
+                        <td>{{item.subtitle}}</td>
+                        <td>{{item.coupon_all_count-item.received_count}}</td>
+                        <td>{{item.coupon_all_count}}</td>
+                        <td>{{item.coupon_daily_count}}</td>
+                        <td>{{item.user_all_count}}</td>
+                        <td>{{item.user_daily_count}}</td>
+                        <td>{{item.discount}}</td>
+                        <td>{{item.rules}}</td>
+                        <td>{{item.receive_start_time}}</td>
+                        <td>{{item.receive_end_time}}</td>
+                        <td>{{item.event_start_time}}</td>
+                        <td>{{item.event_end_time}}</td>
+                        <td>{{item.expire_time}}</td>
+                        <td>{{item.creator}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+

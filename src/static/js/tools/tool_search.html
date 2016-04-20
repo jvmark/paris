@@ -1,0 +1,86 @@
+<div id="da-wrapper">
+  <!-- 头部 -->
+  <div ng-include src="'/static/js/buy/base_header.html'"></div>
+  <!-- 身体 -->
+  <div id="da-content">
+    <!-- Container -->
+    <div class="da-container clearfix">
+      <div ng-include src="'/static/js/buy/base_sidebar.html'"></div>
+      <!-- 右侧内容 -->
+      <div id="da-content-wrap" class="clearfix">
+        <div id="da-content-area">
+          <div class="span12">
+            <div class="da-panel">
+              <div class="da-panel-header">
+                <span class="da-panel-title">外站商品搜索</span>
+              </div>
+              <div class="da-panel-content da-form-container">
+                <form class="da-form" form="query" ng-model="status">
+                  <div class="da-form-inline">
+                    <div class="da-form-row">
+                      <p class="h-label">关键词</p>
+                      <div class="l-span2" style="margin-right: 10px;">
+                        <select ng-model="site">
+                          <option value="xiaohongshunote" selected="selected">小红书笔记</option>
+                          <option value="xiaohongshu">小红书</option>
+                          <option value="kaola">网易考拉</option>
+                        </select>
+                      </div>
+                      <div class="l span7">
+                        <input type="text" ng-keypress="searchKeyPress($event)" placeholder="商品关键词" style="width:400px" ng-model="keyword">
+                      </div>
+                    </div>
+                    <div class="da-form-row">
+                      <div class="l span4">
+                        <a href="javascript:;" ng-click="searchClick()" class="btn btn-primary">查询</a>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="da-panel">
+              <div class="da-panel-header">
+                <span class="da-panel-title">
+                    结果
+                </span>
+              </div>
+              <div class="da-form da-panel-content da-form-container">
+                <form class="da-form da-form-inline" ng-if="loading == true">
+                  <div class="da-form-row">
+                    <div id="da-ex-pba" class="animated blue ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="65">
+                      <div class="ui-progressbar-value ui-widget-header ui-corner-left" style="width: 100%;"></div>
+                    </div>
+                  </div>
+                </form>
+                <form class="da-form da-form-inline" ng-if="loading == false && pageData != null">
+                  <div class="da-form-row">
+                    <div class="da-gallery photoSwipe">
+                      <ul>
+                        <li ng-repeat="item in pageData.object_list" style="border: 1px solid #ccc;cursor: pointer;height: 240px" ng-click="itemClick(item.url)">
+                          <img src="{{item.image}}" alt="">
+                          <div>{{item.desc}}</div>
+                          <p class="desc"><span class="discount-price">￥</span><span>1350</span></span><span class="price"><span >￥</span><span>2580</span></span>
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="btn-row">
+                    <button ng-if="pageData.more" type="button" class="btn btn-danger pull-left" ng-click="moreClick()">更多</button>
+                    <p ng-if="pageData.more == false">没有更多了</p>
+                  </div>
+                </form>
+                <form class="da-form da-form-inline" ng-if="loading == false && pageData == null">
+                  <div class="da-form-row">
+                    没有找到该条码商品
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

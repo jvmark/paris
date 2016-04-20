@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Order>
+    <OrderList>
+    {{#each orderNOs}}
+        <OrderNO>{{this}}</OrderNO>
+    {{/each}}
+    </OrderList>
+    <Page>{{ page }}</Page>
+    <Cause>{{ cause}}</Cause>
+    <Result>{{ result }}</Result>
+    <OrderCount>{{ total }}</OrderCount>
+</Order>

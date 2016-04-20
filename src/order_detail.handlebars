@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Order>
+<Cause>{{ cause}}</Cause>
+<Result>{{ result }}</Result>
+{{#if order }}
+<OrderNO>{{order.basic_msg.main_order_id}}</OrderNO>
+<OrderStatus>{{order.es_status}}</OrderStatus >
+<DateTime>{{order.basic_msg.gmt_create}}</DateTime>
+<BuyerID><![CDATA[堆糖用户]]></BuyerID>
+<BuyerName><![CDATA[{{order.address_msg.receiver}}]]></BuyerName>
+<Phone><![CDATA[{{order.address_msg.telephone}}]]></Phone>
+<Country><![CDATA[中国]]></Country>
+<Province><![CDATA[{{order.address_msg.province}}]]></Province>
+<City><![CDATA[{{order.address_msg.city}}]]></City>
+<Town><![CDATA[{{order.address_msg.district}}]]></Town>
+<Adr><![CDATA[{{order.address_msg.address}}]]></Adr>
+<Total>{{order.basic_msg.actual_fee}}</Total>
+<Currency>CNY</Currency>
+<Postage>{{order.address_msg.user_logistics}}</Postage>
+{{#each order.sub_order_msg  }}
+<Item>
+<GoodsID><![CDATA[{{this.spu_id}}]]></GoodsID>
+<GoodsName><![CDATA[{{this.inventory_name}}]]></GoodsName>
+<Price>{{this.price}}</Price>
+<Count>{{this.quantity}}</Count>
+</Item>
+{{/each}}
+{{/if}}
+</Order>

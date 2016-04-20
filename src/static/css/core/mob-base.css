@@ -1,0 +1,270 @@
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	/*background: transparent;*/
+}
+
+
+/* Responsive images and other embedded objects
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+   If this default setting for images is causing issues, you might want to replace it with a .responsive class instead. */
+img,
+object,
+embed{max-width: 100%;}
+
+
+/* we use a lot of ULs that aren't bulleted.
+	don't forget to restore the bullets within content. */
+dl, ul {list-style: none;}
+i,u{font-style:normal;text-decoration:none;}
+
+blockquote, q {quotes: none;}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {content: ''; content: none;}
+del {text-decoration: line-through;}
+
+strong{font-weight: bold;}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {margin: 0;}
+
+
+html,body{min-height:101%}
+body,input,button,select,textarea,th,td{color:#3a3a3a;font: normal normal normal 12px/1.5 "Helvetica Neue",Arial,Helvetica,"Liberation Sans",FreeSans,sans-serif;}
+
+a,
+a:link,
+a:visited {text-decoration:none;color: #5678a0;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+a:hover {color: #f14382;}
+
+/* Custom text-selection colors (remove any text shadows: twitter.com/miketaylr/status/12228805301) */
+/*::-moz-selection{background:none; color: #fff; text-shadow: none;}*/
+/*::selection {background:none; color: #fff; text-shadow: none;}*/
+
+
+
+
+
+.lkl a,a.lkl{text-decoration:underline !important}
+                            /*    LinK  _ text-decoration:underLine */
+.lkn a,a.lkn{text-decoration:none !important}        
+                            /*    LinK  _ text-decoration:None    */
+/****link end****/
+
+/****for testing start****/
+.bd{border:1px solid #f00}                
+                            /*    BorDer      */
+.bg{background:#f00}                  
+                            /*    BackGround      */
+/****for testing end****/
+
+/****common start****/
+.c{clear:both;overflow:hidden}
+.clr{zoom:1}
+.clr:after{content:"\0020";display:block;height:0;overflow:hidden;clear:both}
+                            /*    Clear:both      */
+.l{float:left !important;display:inline}        
+                            /*    float Left      */
+.r{float:right !important;display:inline}       
+                            /*    float Right     */
+.n{float:none !important}  /*    float None     */
+
+.h{width:50%;+width:49.99%;overflow:hidden}               
+                            /*      Halfwidth   */
+.t{width:33.333%;+width:33.2%;overflow:hidden}
+                            /*      Third - one of three  */
+.b{font-weight:bold}                  
+                            /*      Bold      */
+.f12{font-size:12px}                  
+                            /*      Font-size:12px    */
+.f14{font-size:14px}                  
+                            /*      Font-size:14px    */
+.f16{font-size:16px}                  
+                            /*      Font-size:16px    */  
+
+.pa{position:absolute;top:0;left:0}                  
+                            /*      Position:Absolute */
+.pr{position:relative;top:0;left:0}                  
+                            /*      Position:Relative */
+.db{display:block}                    
+                            /*      Display:Block   */
+.dbi img{display:block}                    
+                            /*      Display:Block   */
+
+.dib{float:none !important;display:inline-block;display:-moz-inline-box;-moz-box-align:stretch;+display:inline-block;vertical-align:middle}
+.dib{+display:inline}
+@media all and (min-width: 0px){ .dib{display:inline-block} }{}     
+                            /*      Display:Inline-Block    */
+
+
+  
+.vh{visibility:hidden}                  
+                            /*      Visibility:Hidden */
+.dn{display:none !important}              
+                            /*      Display:None    */
+.oh{overflow:hidden}                  
+                            /*      Overflow:Hidden   */
+.tc{text-align:center}                  
+                            /*      Text-align:Center */
+.tr{text-align:right}                 
+                            /*      Text-align:Right  */
+.bn{border:none !important}               
+                            /*      Border:None     */
+
+.l15{line-height:1.5}                  
+                            /*      Line-height [1.5]         */
+.l18{line-height:1.8}                  
+                            /*      Line-height [1.8]         */
+.l20{line-height:2}                  
+                            /*      Line-height [2]         */
+.l22{line-height:2.2}                  
+                            /*      Line-height [2.2]         */
+.l24{line-height:2.4}                  
+                            /*      Line-height [2.4]         */
+.l26{line-height:2.6}                  
+                            /*      Line-height [2.6]         */
+
+
+.nw{word-break:keep-all;white-space:nowrap;overflow:hidden}   
+                            /*  No Wrap  */
+.bw{word-wrap:break-word;word-break:break-all;overflow:hidden}           
+                            /*  Break Word  */        
+/****common end****/
+
+/****layout start****/
+.ma{margin-left:auto !important;margin-right:auto !important}         
+                            /*      MArgin    auto      */
+/****layout end****/
+
+
+
+
+/****for margin control start****/
+.h0,.h18{overflow:hidden;word-wrap:break-word;word-break:break-all}
+.h0{+position:relative;height:0px !important}
+                            /*  Height  [0]px using for space filling with margin-top */
+.h18{height:18px}                   
+                            /*  Height  [16]px  using for space filling with margin-top */
+
+.m0{margin:0 !important}
+.mt8{margin-top:8px}
+.ml8{margin-left:8px}
+.mr8{margin-right:8px}
+.mb8{margin-bottom:8px}
+.pb8{padding-bottom:8px}
+.ml0{margin-left:0 !important}
+.mr0{margin-right:0 !important}
+.mb0{margin-bottom:0 !important}
+.pr0{padding-right:0 !important}
+/****for margin control end****/
+
+/*************** group css ***************/
+/* Vertical align Middle */
+/*ex:*/ 
+/*<div class="vm"><div class="vma"><div class="vmb">*/  
+/*#content#*/
+/*</div></div></div>*/
+/*--please set the height attribute in addition before using it. height:100px for example.*/
+.vm,.vm .vma .vmb{height:100px}
+.vm{position:relative}
+.vm .vma{display:table;+position:absolute;border:none!important;+top:50%}
+.vm .vma .vmb{width:100%;display:table-cell;+position:relative;+top:-50%;+height:auto !important;vertical-align:middle}
+.vma img{display:block;}
+
+/* CenTer horizontal and vertical */
+/*ex:*/
+/*<div class="ct vm"><div class="vma"><div class="vmb">*/
+/*#content#*/
+/*</div></div></div>*/
+/*--need surport of style .vm Vertical align Middle*/
+.ct .vma{+left:50%;margin:0px auto}
+.ct .vma .vmb{+left:-50%;margin:0px auto}
+.ct .vma img{+margin-top:4px}
+
+.vab{vertical-align:bottom;}
+
+/* Picture Link */
+/*ex1:*/
+/*<a class="pl" href="#" ><img class="m7" src="" />#picture notation#</a><div class="c"></div>*/
+/*ex2:*/
+/*<a class="pl" href="#" ><div class="bp"><img src="" /></div>#picture notation#</a><div class="c"></div>*/
+/*--don't forget <div class="c"></div> at the end for .pl has float attribute*/
+a.pl,.pl a{float:left;text-align:left;line-height:1.5;}
+.pl img{margin:0}
+a.pl img,.pl a img{display:block;cursor:pointer;margin-bottom:4px}
+div.pl{zoom:1}
+div.pl:after{content:"\0020";display:block;height:0;clear:both}
+
+
+
+/* float li in ul */
+ul.ll li{float:left}
+
+
+/* SWitch */
+/*ex:*/
+/*<ul id="sw_a" class="sw">*/
+/*<li><a href="">title1</a></li>*/
+/*<li><a href="">title2</a></li>*/
+/*</ul>*/     
+/*<dl id="sw_b" class="bd p14">*/
+/*<dd>*/
+/*  content 1*/
+/*</dd>*/
+/*<dd class="dn">*/
+/*  content 2*/
+/*</dd>*/
+/*</dl>*/
+/*<script>swInitialize('sw',0)</script>*/
+/*--you should include js file which contain the function swInitialize()*/
+.sw{height:24px;line-height:24px;overflow:hidden}
+.sw li{float:left;+display:inline;text-align:center;cursor:pointer}
+.sw li a{float:left;height:100%}
+
+
+
+/* Dib aLink */
+/*<div class="da">*/				
+/*    <a href="">link</a><a href="">link</a><a href="">link</a>*/
+/*</div>*/
+.da a{display:inline-block;display:-moz-inline-box;-moz-box-align:stretch;+display:inline-block;padding:0 6px;font-family:'\5B8B\4F53';}
+.da a{+display:inline}
+
+/*Pic-p*/
+/*<div class="pp">*/
+/*	<a href=""><img src="http://i02.c.aliimg.com/news/upload/001/02_1216361028342.jpg" width="128" height="96" align="left"/></a>*/					
+/*	<h3><a href="">headlink</a></h3>*/
+/*	<p>description<a href="">[more]</a></p>*/						
+/*</div>*/
+.pp,ul.pp li{overflow:hidden;zoom:1}
+.pp img{margin-left:0}
+
+/**/
+.tb{display:table}
+.tbc{display:table-cell;float:none;+float:left;vertical-align:top}
+
+
+/* Media queries!
+-------------------------------------------------------------------------------*/
+
+/* Consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ 
+@media screen and (max-device-width: 480px) {
+
+
+}
+
+@media all and (orientation: portrait) {
+
+}
+
+@media all and (orientation: landscape) {
+
+}
+*/

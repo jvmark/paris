@@ -1,0 +1,375 @@
+/*
+@说明：产品级公用样式，涵盖 frame set / base element / common control
+@作者：balibell
+@时间：2010-05-01
+*/
+
+
+
+body > *{display:none;}
+body > div,
+body > header,
+body > article,
+body > footer{display:block;}
+
+
+iframe{display:none !important;}
+
+/* frame set */
+a:link, a:visited {text-decoration:none;color:#5678a0;}
+a:hover {text-decoration:underline;color:#f14382;}
+
+::-moz-selection{color:#fff;color:rgba(255,255,255,.85);background:#cee3f2;}
+::selection{color:#fff;color:rgba(255,255,255,.85);background:#cee3f2;}
+
+
+.ctr-sw strong,.box strong,.red{color:#f14382;}
+.gray{color:#bbb}
+.blue{color:#137ad1;}
+.black{color:#000;}
+.skyblue{color:#2380cc;}
+
+.bluelk a:link,.bluelk a:visited,a.bluelk:link,a.bluelk:visited{color:#137ad1;}
+.bluelk a:hover,a.bluelk:hover{text-decoration:underline;color:#137ad1;}
+.graylk a:link,.graylk a:visited,a.graylk:link,a.graylk:visited{color:#bbb;}
+.graylk a:hover,a.graylk:hover{text-decoration:underline;color:#f14382;}
+.dgraylk a:link,.dgraylk a:visited,a.dgraylk:link,a.dgraylk:visited{color:#666;}
+.dgraylk a:hover,a.dgraylk:hover{text-decoration:underline;color:#f14382;}
+.blacklk a:link,.blacklk a:visited,a.blacklk:link,a.blacklk:visited{color:#000;}
+.blacklk a:hover,a.blacklk:hover{text-decoration:underline;color:#f14382;}
+.redlk a:link,.redlk a:visited,a.redlk:link,a.redlk:visited{color:#f14382;}
+.redlk a:hover,a.redlk:hover{text-decoration:underline;color:#f14382;}
+.whitelk a:link,.whitelk a:visited,a.whitelk:link,a.whitelk:visited{color:#fff;}
+.whitelk a:hover,a.whitelk:hover{text-decoration:underline;color:#fff;}
+
+
+.btn-white:link,
+.btn-white:visited,
+.btn-white {
+  background-color: #fff;
+}
+
+.btn-white:hover {
+  background-color: #f0f0f0;
+}
+
+.btn-gray:link,
+.btn-gray:visited,
+.btn-gray {
+  background-color: #bbb;
+}
+
+.btn-gray:hover {
+  background-color: #a4a4a4;
+}
+
+.btn-red:link,
+.btn-red:visited,
+.btn-red {
+  background-color: #ff4466;
+}
+
+.btn-red:hover {
+  background-color: #e03c5a;
+}
+
+.btn-blue:link,
+.btn-blue:visited,
+.btn-blue {
+  background-color: #22b4f6;
+}
+
+.btn-blue:hover {
+  background-color: #1e9ed8;
+}
+
+.btn-green:link,
+.btn-green:visited,
+.btn-green {
+  background-color: #4cd964;
+}
+
+.btn-green:hover {
+  background-color: #43bf58;
+}
+
+/*****************************基础样式结束************************/
+
+/**** html5 filt start ****/
+.h5vh{visibility:hidden;visibility:visible\9}  /**** visibility:hidden in html5  ****/
+.h5dn{display:none;display:block\9}  /**** display:none in html5  ****/
+/**** html5 filt end ****/
+
+/* default title 样式 */
+.dftt{height:32px;line-height:2;background-image:url(http://img4.duitang.com/uploads/files/201401/19/20140119112540_kLCvn.gif);background-repeat:repeat-x;background-position:0 -240px;font-weight:bold;font-size:14px;color:#000;}
+.dftt div{height:27px;padding:2px 0 3px 24px;background-image:url(../../../../img/0/main.png?20120916);background-repeat:no-repeat;background-position:0 -792px;}
+
+/* 通用更多 more */
+.mr{font-size:12px;font-weight:normal;}
+
+/* seo 专用，隐藏某个关键的text文本 */
+.txt{position:absolute;left:-9999px;overflow:hidden;width:1px;height:1px;}
+
+/* base element */
+.ipt{width:180px;height:25px;line-height:21px;padding:3px 2px 0 4px;border-width:1px;border-style:solid;border-color:#D4D4D4;font-size:12px;}
+/* add.zhubin */
+input.ipt:focus{background-color:#FAFFBD}
+.ipt-l{width:430px;}
+.txa{display:block;width:430px;height:200px;line-height:21px;padding:3px 2px 0 4px;border-width:1px;border-style:solid;border-color:#D4D4D4;font-size:12px;-moz-border-radius:0px;-webkit-border-radius:0px;border-radius:0px;}
+
+
+/* 兼容各浏览器的文字高度，适用于与icon对齐的文字 */
+.ali{float:left;+display:inline;height:20px;overflow:hidden;padding-left:20px;font-family:\5B8B\4F53;}
+
+/* 上传控件 */
+input.uptxt{width:400px;}
+.upfile{position:relative;float:left; width:148px;height:24px;overflow:hidden;margin-top:2px;margin-left:8px;}
+.upfile input{position:absolute;left:-135px\9;top:0;width:200px; height:22px;cursor:pointer;font-size:12px;}
+@media all and (min-width: 0px){ .upfile input{left:-139px} }
+.upfile input , x:-moz-any-link, x:default{left:-135px}
+@media screen and (-webkit-min-device-pixel-ratio:0){.upfile input {left:0}}
+
+/* u-chk 置于 chk 的外层，表示统一 input check 样式，在登录注册页面有使用 */
+.u-chk{line-height:25px;font-size:12px;font-weight:normal}
+.u-chk .chk{float:left;+display:inline;margin:7px 4px 0 0;margin:6px 4px 0 0\9;+margin:2px 2px 0 0;+vertical-align:middle;_margin-top:4px;}
+.u-chk label{float:left;+display:inline;margin:0 16px 0 0;}
+/*
+.btn,.btn u{text-decoration:none;height:26px;line-height:2;overflow:hidden;background-image:url(../../../../img/0/0/btns.gif);font-size:14px;font-weight:bold;}
+.btn u{float:left;+display:inline;height:100%;cursor:pointer;padding:0 12px;background-position:right -40px;}
+a.btn:link,a.btn:visited{background-position:0 0;color:#fff;}
+a.btn:hover{background-color:transparent;background-position:0 0;}
+a.btn:hover,a.btn:hover u{text-decoration:underline;color:#fff}
+*/
+
+/* btn 与 abtn 区别在于 有无 <button/> */
+
+/*
+按钮宽度定义
+2个   3个    4个    5个    6个   7个
+50px 54px    70px   86px  102   118
+*/
+.btn{float:left;+display:inline;height:24px;padding:2px 24px 1px;padding:3px 24px 0\9;margin:4px 8px 0 0;overflow:hidden;line-height:1.5;border:1px solid #bad3e5;background:#E3EDF5 url(../../../../img/0/btn.gif?20111121) 0 -300px repeat-x;font-size:14px;}
+.btn u{float:left;+display:inline;height:100%;cursor:pointer;color:#666;font-family:宋体;}
+.btn:link,.btn:visited{color:#666;}
+.btn:hover{text-decoration:none;color:#666;}
+
+.btn-s{height:21px;padding:2px 16px 1px;background:#d7eafb;border:1px solid #88b3d8;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;}
+
+
+/*
+button 按钮上的宽度定义  专门针对 ie6 ie7
+2个   3个    4个    5个    6个   7个
+60px 76px    92px  108px  124px  140px
+使用时记得加 + 号
+<button style="+width:92px">按钮</button> 
+*/
+.abtn:link,.abtn:visited{float:left;+display:inline;margin-right:8px;padding-left:2px;height:30px;overflow:hidden;border-radius:2px;background-color:#22b4f6;border-radius:2px}
+.abtn:hover{background-color:#1e9ed8;}
+
+.abtn button{+overflow:visible;float:left;+display:inline;width:auto;height:100%;border:0 none;background:0 none;margin:0;padding:0;cursor:pointer;+width:60px;}
+.abtn button::-moz-focus-inner{padding:0;border:0 none;}
+.abtn u{display:inline-block;padding:0 16px 0 16px;height:100%;letter-spacing:2px;font-size:14px;line-height:31px;font-family:'\5B8B\4F53';color:#f7f7f7;cursor:pointer;text-decoration:none !important;}
+.abtn u{+display:inline}
+
+
+
+.abtn-w3 button{+width:76px;}
+.abtn-w4 button{+width:92px;}
+.abtn-w5 button{+width:108px;}
+.abtn-w6 button{+width:124px;}
+.abtn-w7 button{+width:140px;}
+
+
+
+/* abtn u 下内嵌小图标 */
+a.abtn i{float:left;+display:inline;height:100%;margin:0 0 0 -16px;padding:0 0 0 26px;background-repeat:no-repeat;}
+
+
+/* 小号的 abtn 目前暂未使用
+.abtn-s:link,.abtn-s:link:visited{height:24px;background-position:0 -302px;}
+.abtn-s:hover{background-position:0 -328px;}
+.abtn-s u{line-height:24px;font-size:12px;background-position:right 0;}
+.abtn-s:hover u{background-position:right -26px;}
+ */
+
+/* 上传按钮，带小icon */
+.abtn-up{overflow:hidden;position:relative;}
+.abtn-up i{background-image:url(http://img4.duitang.com/uploads/people/201406/19/20140619030054_XGKVY.png);background-position:-150px -251px;}
+.abtn-up input{position:absolute;top:0;left:0;width:75px;height:25px;overflow:hidden;opacity:.0;filter:alpha(opacity=0);cursor:pointer;}
+
+
+/* disabled abtn */
+.abtn-no:link,.abtn-no:visited{background-color:#d5d5d5 !important;}
+.abtn-no:hover{background-color:#d5d5d5 !important;}
+.abtn-no u{color:#f7f7f7 !important;cursor:default;}
+.abtn-no,.abtn-no button{cursor:default;}
+
+
+
+
+
+
+
+
+
+
+/* .pimg 下的a 有固定高度height:56px; 是为了应付firefox 下无图坍缩导致的高度不确定问题 */
+.pimg a,.pimg p{/*background-image:url(../../../../img/0/main.png?20120916);background-position:-10px -100px;background-repeat:no-repeat;*/}
+.pimg a{float:left;padding:0 3px 7px 0;}
+.pimg p{float:left;padding:0 3px 0 0;}
+.pimg cite{display:block;clear:both;font-style:normal;}
+.pimg img{display:block;/*border:1px solid #a7a7a7;padding:1px;*/background-color:#fff;}
+.pimg a.nobg{background:none;}
+
+.pimg-ada a img{padding:0;border:2px solid #238fdb;background-color:#fff;}
+.pimg-hot a img{padding:0;border:2px solid #f14382;background-color:#fff;}
+
+.pimg-ada,.pimg-hot{position:relative;}
+.pimg-ada u,.pimg-hot u{position:absolute;width:11px;height:11px;overflow:hidden;line-height:1;top:0;right:4px;font-size:10px;color:#fff;}
+.pimg-ada u{background-color:#238fdb;}
+.pimg-hot u{background-color:#f14382;}
+
+/* 垂直居中的pimg，宽度100 */
+.pimg-v100 p{width:100px;height:100px;overflow:hidden;border:1px solid #A7A7A7;padding:2px;line-height:100px;display:table-cell;+display:block;+font-size:88px;+font-family:Arial;text-align:center;background:#fff;}
+.pimg-v100 p img{display:inline;border:0 none;padding:0;vertical-align:middle;}
+
+
+
+
+
+/* control 上下图文复杂结构
+ul.ctr-cxpic li{width:128px;overflow:hidden;margin:8px 12px 0;padding:0 0 8px 0px;line-height:18px;}
+ul.ctr-cxpic a.pl{width:100%;overflow:hidden;line-height:18px;text-align:left;padding-bottom:4px;}
+ul.ctr-cxpic a.pl img{margin:0 auto 4px;}
+*/
+
+/* control 上下图文简单结构
+ul.ctr-cxpic-sm a.pl{text-align:center;}
+ul.ctr-cxpic-sm li{width:74px;margin:8px 0 0;text-align:center;}
+*/
+
+
+
+
+
+
+/* 链接色倒转 */
+a.rvta:link,a.rvta:visited{color:#666;}
+a.rvta:link u.rvtu,a.rvta:visited u.rvtu{font-size:12px;color:#5678a0;}
+a.rvta:hover,a.rvta:hover u.rvtu{color:#f14382;}
+
+a.rvta:link,a.rvta:visited{color:#666;}
+a.rvta:link u.gray,a.rvta:visited u.gray{font-size:12px;color:#bbb;}
+a.rvta:hover,a.rvta:hover u.gray{color:#f14382;}
+
+/* control 水平切换 */
+.ctr-sw,.ctr-sw li a,.ctr-sw li,.ctr-sw i{background-image:url(../../../../img/0/btn.gif?20111121);background-repeat:no-repeat;background-color:transparent;}
+.ctr-sw{height:31px;padding-left:16px;-moz-border-radius:4px 4px 0 0;-webkit-border-radius:4px 4px 0 0;border-radius:4px 4px 0 0;background-position:0 -160px;background-repeat:repeat-x;}
+.ctr-sw li{float:left;height:100%;overflow:hidden;margin:0 8px 0 0;background-position:0 -80px;}
+.ctr-sw a{float:left;height:100%;overflow:hidden;line-height:38px;padding:0 17px 0 20px;background-position:0 -80px;text-align:center;text-decoration:none;font-family:宋体;font-size:12px;font-weight:normal;}
+.ctr-sw i{float:left;width:4px;height:100%;background-position:0 -120px;}
+.ctr-sw li.cur{z-index:100;background-position:0 0px;}
+.ctr-sw li.cur a{font-weight:bold;background-position:0 0px;}
+.ctr-sw li.cur i{background-position:0 -40px;background-color:transparent}
+.ctr-sw a:hover{background-color:transparent;color:#f14382;cursor:pointer;text-decoration:none;}
+.ctr-sw .last i{background-color:#fff;}
+.ctr-sw-rp{float:right;+display:inline;margin:-26px 0 0}
+.ctr-sw .pcore{height:auto;padding:8px 4px 0 4px;background:none;font-weight:bold;font-size:14px;}
+
+/* tab切换弱化版本
+.ctr-sw2{padding-left:0;background-position:0 -560px;}
+.ctr-sw2 li{background-position:0 -480px;}
+.ctr-sw2 a{padding:0 14px 0 20px;line-height:34px;}
+.ctr-sw2 li.cur a{line-height:32px;}
+.ctr-sw2 i{background-position:-7px -520px;}
+.ctr-sw2 li.cur{background-position:0 -400px;background-color:#f7f7f7;}
+.ctr-sw2 li.cur i{background-position:-7px -440px;}
+*/
+
+
+
+
+
+/* PageBaR */
+/*ex:*/
+/*<div class="pbr">*/       
+/*  <ul class="dib">*/
+/*  <li class="nlk"><a href="">首页</a></li>*/
+/*  <li class="nlk"><a  class="pre" href="">上一页</a></li>*/
+/*  <li><a href="">1</a></li>*/
+/*  <li class="cur">2</li>*/
+/*  <li><a href="">3</a></li> */
+/*  <li class="ell" >…</li>*/
+/*  <li><a class="nxt nxtw" href="">下一页</a></li>*/
+/*  <li><a href="">末页</a></li>*/
+/*  <li class="pbrw">共100页 到</li>*/
+/*  <li><input type="text" class="gti" value=""/></li>*/
+/*  <li class="pbrw" >页</li>*/
+/*  <li><a class="gtb" href="javascript:;" target="_self"><button><u>确定</u></button></a></li>*/
+/*  </ul>*/     
+/*</div>*/
+/*--need surport of style .dib Display:Inline-Block*/
+/*
+.pbr{height:40px;overflow:hidden;margin:16px 0 0;line-height:1.2;text-align:center;}
+.pbr .dib{height:100%}
+.pbr li.cur,.pbr a{width:44px;height:28px;padding:9px 0 0;background-color:#fff;background-image:url(http://img4.duitang.com/uploads/files/201305/08/20130508155623_cnX8H.png);background-repeat:no-repeat;background-position:0 -42px;text-align:center;font-size:14px;}
+.pbr a{float:left;+display:inline;white-space:no-wrap;word-break:keep-all;color:#0052aa;}
+.pbr a:hover{text-decoration:none;background-color:#e3edf4;color:#0052aa;background-position:0 -84px;}
+.pbr li{height:40px;float:left\9;display:inline\9;margin:0 4px 0 0;}
+.pbr li.cur{font-weight:bold;color:#fff;background-position:0 0;}
+.pbr li.ell{margin:18px 8px 0 6px;font-size:10px;font-weight:bold;}
+@media all and (min-width: 0px){ .pbr a{display:inline-block;float:none}.pbr li{float:left}}{}
+.pbr .nlk a:link,
+.pbr .nlk a:visited,.pbr a.nlk:link,.pbr a.nlk:visited{color:#bbb;cursor:default;}
+.pbr .nlk a:hover,
+.pbr a.nlk:hover{color:#bbb;background-position:0 -42px;}
+.pbr a.pre,
+.pbr a.nxt{width:74px;text-indent:-9999px;font-weight:normal}
+.pbr a.pre:link,
+.pbr a.pre:visited{margin-right:8px;background-position:0 -140px;}
+.pbr a.pre:hover{background-position:0 -200px;}
+.pbr a.nxt:link,
+.pbr a.nxt:visited{margin-left:8px;background-position:-100px -140px;}
+.pbr a.nxt:hover{background-position:-100px -200px;}
+.pbr .gti{float:left;+display:inline;width:32px;height:16px;margin:7px 0 0 2px;border:1px solid #ccc;vertical-align:middle;text-align:center}
+.pbr .gtb{float:left;+display:inline;width:auto;height:18px;overflow:hidden;margin:6px 0 0 2px;padding:0;border:1px solid #ccc;background:#fff;cursor:pointer}
+.pbr .gtb:hover{background:#fff}
+.pbr .gtb button{margin:-6px 0 0;margin:-1px 0 0\9;+margin:-4px 0 0;padding:0 4px;border:0 none;background:none;cursor:pointer}
+.pbr .gtb button u{text-decoration:none;line-height:1.8}
+.pbr .pbrw{padding:8px 4px;padding-top:10px\9;+padding-top:9px}
+*/
+
+
+
+
+.pbr{height:40px;overflow:hidden;margin:16px 0 0;line-height:1;text-align:center;}
+.pbr .dib{height:100%}
+.pbr li.cur,
+.pbr a:link,
+.pbr a:visited{float:left;+display:inline;min-width:20px;height:20px;padding:6px 4px 0;+height:22px;+padding-top:4px;white-space:no-wrap;word-break:keep-all;text-align:center;border:1px solid #e3e2e1;border-radius:2px;background-color:#fff;color:#0052aa;font-size:14px;}
+.pbr a:hover{text-decoration:none;background-color:#f6f6f6;color:#0052aa;}
+.pbr li{height:40px;float:left\9;display:inline\9;margin:0 4px 0 0;}
+.pbr li.cur{font-weight:bold;color:#fff;border-color:#ce0149;background-color:#f14382;}
+.pbr li.ell{margin:10px 8px 0 6px;font-size:10px;font-weight:bold;+font-size:12px;+font-weight:normal;}
+@media all and (min-width: 0px){ .pbr a{display:inline-block;float:none}.pbr li{float:left}}{}
+.pbr .nlk a:link,
+.pbr .nlk a:visited,.pbr a.nlk:link,.pbr a.nlk:visited{color:#bbb;cursor:default;}
+.pbr .nlk a:hover,
+.pbr a.nlk:hover{color:#bbb;background-color:transparent;}
+.pbr a.pre,
+.pbr a.nxt{width:56px;text-indent:-9999px;font-weight:normal;background-image:url(http://img4.duitang.com/uploads/item/201307/19/20130719140023_YrJaZ.png);background-repeat:no-repeat;}
+.pbr a.pre:link,
+.pbr a.pre:visited{background-position:-1px -1px;}
+.pbr a.pre:hover{background-position:-1px -31px;}
+.pbr a.nxt:link,
+.pbr a.nxt:visited{background-position:-71px -1px;}
+.pbr a.nxt:hover{background-position:-71px -31px;}
+.pbr .gti{float:left;+display:inline;width:32px;height:16px;margin:6px 0 0 2px;border:1px solid #ccc;vertical-align:middle;text-align:center}
+.pbr a.gtb:link,
+.pbr a.gtb:visited
+{float:left;+display:inline;width:auto;height:18px;overflow:hidden;margin:4px 0 0 2px;padding:0;border:1px solid #e3e2e1;background:#fff;cursor:pointer}
+.pbr a.gtb:hover{background:#f6f6f6}
+.pbr a.gtb button{margin:-6px 0 0;margin:-1px 0 0\9;+margin:-4px 0 0;padding:0 4px;border:0 none;background:none;cursor:pointer}
+.pbr a.gtb button u{text-decoration:none;line-height:1.8}
+.pbr .pbrw{padding:8px 4px;padding-top:10px\9;+padding-top:9px}
+

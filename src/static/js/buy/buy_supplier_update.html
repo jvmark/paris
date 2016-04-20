@@ -1,0 +1,154 @@
+<style type="text/css">
+html,
+body {
+  height: 100%;
+}
+
+.promotion-detail {
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0
+}
+.detail-table tr,.detail-table td{
+  border:  1px solid #aaa;
+  padding: 5px;
+  font-size: 14px;
+}
+</style>
+<div id="da-wrapper">
+  <!-- 头部 -->
+  <div ng-include src="'/static/js/buy/base_header.html'"></div>
+  <!-- 身体 -->
+  <div id="da-content">
+    <!-- Container -->
+    <div class="da-container clearfix">
+      <div ng-include src="'/static/js/buy/base_sidebar.html'"></div>
+      <!-- 右侧内容 -->
+      <div id="da-content-wrap" class="clearfix">
+        <div id="da-content-area">
+          <div>
+              <div class="da-panel">
+                <div class="da-panel-header">
+                  <span class="da-panel-title">
+                      <i class="icol-pencil"></i>
+                      详情/编辑供应商
+                  </span>
+                </div>
+                <div class="da-panel-content da-form-container">
+                  <form class="da-form da-form-inline">
+                    <div class="da-form-row">
+                      <div class="l-span6">
+                        <p>供应商信息</p>
+                        <div class="clr">
+                            <label class="h-label span2">供应商ID：</label>
+                            <span  class="span4"  style="cursor: pointer;">{{supplier.supplier_id}}</span>
+                        </div>
+                        <div class="clr">
+                            <label class="h-label span2">供应商名称：</label>
+                            <span  class="span4"   style="cursor: pointer;">{{supplier.supplier_name}}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="da-form-row">
+                    	<p>双方联络</p>
+                      <div class="l-span6">
+                        <label class="h-label span2">供应商联系人：</label>
+                        <input type="text"  class="span4" ng-model="supplier.contacts"  style="cursor: pointer;">
+                      </div>
+                      <div class="l-span6">
+                        <label class="h-label span2">供应商联系方式：</label>
+                      	<input type="text"  class="span4" ng-model="supplier.telephone"  style="cursor: pointer;">
+                      </div>
+                      <div class="l-span6">
+                        <label class="h-label span2">堆糖BD员工号：</label>
+                        <input type="text"  class="span4" ng-model="supplier.duitang_bd"   style="cursor: pointer;"  placeholder="负责该供应商的BD" >
+                      </div>
+                      <div class="l-span6">
+                        <label class="h-label span2">备注：</label>
+                       <textarea   class="span4"  style="height:70px;margin-bottom: 10px;" ng-model="supplier.remark" >{{supplier.remark}}</textarea>
+                      </div>
+                    </div>
+                    <div class="da-form-row">
+                    	<p>邮费</p>
+                      <div class="l-span6">
+                        <label class="h-label span2">用户邮价：</label>
+                        <input type="text"  class="span4" ng-model="supplier.user_logistics_price"   style="cursor: pointer;">
+                      </div>
+                      <div class="l-span6">
+                        <label class="h-label span2">结算邮价：</label>
+                        <input type="text" class="span4" ng-model="supplier.supplier_logistics_price"  style="cursor: pointer;">
+                      </div>
+                      <div class="l-span6">
+                        <label class="h-label span2">用户免邮门槛：</label>
+                        <input type="text" class="span4" ng-model="supplier.user_logistics_threshold"   style="cursor: pointer;">
+                      </div>
+                      <div class="l-span6">
+                        <label class="h-label span2">结算免邮门槛：</label>
+                        <input type="text"  class="span4" ng-model="supplier.supplier_logistics_threshold"   style="cursor: pointer;">
+                      </div>
+                    </div>
+                    <div class="da-form-row">
+                      <div class="l-span6">
+                        <div class="clr">
+                            <label class="h-label span2">结算：</label>
+                            <select ng-model="supplier.settle_type" ng-options="item.value as item.text for item in settleTypeMaps" ng-change = "supplier.account = '' ; supplier.receiver = '' ;supplier.bank = '' ;"  ng-show="reSelectSettleType?true : false">
+                            </select>
+                        </div>
+                          <table class="pg-banner-table" style="display: block;margin-left: 0px;background-color: #eee;" class="span4" ng-show="supplier.settle_type==1?true : false">
+                        <tr  style="padding:5px;" class="span8">
+                          <td class="span6">
+                            <div class="clr">
+                              <label class="h-label span2">开户支行名称：</label>
+                              <input type="text" class="span8" ng-model="supplier.bank"/>
+                            </div>
+                            <div class="clr">
+                              <label class="h-label span2">汇款账户：</label>
+                              <input type="text" class="span8" ng-model="supplier.account"/>
+                            </div>
+                            <div class="clr">
+                              <label class="h-label span2">收款人：</label>
+                              <input type="text" class="span8" ng-model="supplier.receiver"/>
+                            </div>
+                          </td>
+                          <td>
+                            <div style="width:20px;height:20px;background-size:cover;background:url('http://img4q.duitang.com/uploads/people/201508/31/20150831175107_fCBWv.png');background-size:cover;cursor:pointer;" ng-click="removeSettle()" ng-hide="reSelectSettleType"></div>
+                          </td>
+                        </tr>
+                      </table>
+                      <table class="pg-banner-table" style="display: block;margin-left: 0px;background-color: #eee;" class="span4"   ng-show="supplier.settle_type==0?true : false">
+                        <tr  style="padding:5px;" class="span8">
+                          <td class="span6">
+                            <div class="clr">
+                              <label class="h-label span2">支付宝账户：</label>
+                              <input type="text" class="span8" ng-model="supplier.account"/>
+                            </div>
+                            <div class="clr">
+                              <label class="h-label span2">收款人：</label>
+                              <input type="text" class="span8" ng-model="supplier.receiver"/>
+                            </div>
+                          </td>
+                          <td>
+                            <div style="width:20px;height:20px;background-size:cover;background:url('http://img4q.duitang.com/uploads/people/201508/31/20150831175107_fCBWv.png');background-size:cover;cursor:pointer;" ng-click="removeSettle()" ng-hide="reSelectSettleType"></div>
+                          </td>
+                        </tr>
+                      </table>
+                      </div>
+                    </div>
+                    <div class="btn-row">
+                      <input value="保存" type="submit" class="btn btn-success" ng-click="updateSupplier()" style="float:left;">
+                    </div>
+                  </form>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+

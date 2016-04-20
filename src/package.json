@@ -1,0 +1,33 @@
+{
+  "name": "paris",
+  "version": "0.0.1",
+  "description": "商业后台业务代码",
+  "main": "index.js",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@git.duitang.net:7999/biz/paris.git"
+  },
+  "author": "lloyd",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "co": "^4.6.0",
+    "connect-redis": "^3.0.2",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
+    "express-http-proxy": "^0.6.0",
+    "express-session": "^1.13.0",
+    "merge": "^1.2.0",
+    "mime": "^1.3.4",
+    "moment": "^2.12.0",
+    "mongoose": "^4.4.12",
+    "multer": "^1.1.0",
+    "node-uuid": "^1.4.7",
+    "node-xlsx": "^0.6.0",
+    "q": "^1.4.1",
+    "request": "^2.69.0",
+    "underscore": "^1.8.3"
+  }
+}

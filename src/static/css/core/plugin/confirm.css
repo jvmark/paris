@@ -1,0 +1,12 @@
+/* 
+@说明：产品级公用样式文件，浮出确认框，选择确认或删除
+@依赖：/js/core/plugin/confirm.js
+@作者：balibell 
+@时间：2011-04-26
+*/
+
+
+.PL-confirm{position:absolute;z-index:9012;top:0;left:0;width:230px;+width:218px;padding:0;display:none;}
+.PL-cfm-cont{width:auto;padding:12px;border:1px solid #A0A0A0;+border:5px solid #ddd;-moz-border-radius:3px;-webkit-border-radius:3px;-border-radius:1px;-moz-box-shadow:0 0 10px #666;-webkit-box-shadow:0 0 10px #666;box-shadow:0 0 10px #666;background-color:#fff;}
+.PL-cfm-wds{min-height:30px;_height:30px;font-size:12px;line-height:1.5;}
+.PL-cfm-btns{margin:4px 0 0;}

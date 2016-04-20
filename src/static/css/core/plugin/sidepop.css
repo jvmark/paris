@@ -1,0 +1,12 @@
+.SG-sidebar{position:absolute;top:4px;right:2px}.SG-sidebar a{float:left;+display:inline;width:26px;line-height:16px;height:18px;overflow:hidden;text-align:center;}
+
+.SG-sidemin:link,.SG-sidemin:visited{}
+.SG-sidemin:hover{text-decoration:none;}
+.SG-sideres:link,.SG-sideres:visited{}
+.SG-sideres:hover{text-decoration:none;}
+.SG-sideclose:link,.SG-sideclose:visited{}
+.SG-sideclose:hover{text-decoration:none;}
+
+
+
+.SG-sidecont img{display:block;}

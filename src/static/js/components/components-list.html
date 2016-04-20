@@ -1,0 +1,117 @@
+<style type="text/css">
+  .row-line{margin:10px 0;}
+</style>
+<div id="da-wrapper" class="fixed">
+  <div id="da-header">
+    <div id="da-header-top">
+      <!-- Container -->
+      <div class="da-container clearfix">
+          <!-- Logo Container. All images put here will be vertically centere -->
+          <div id="da-logo-wrap">
+              <div id="da-logo">
+                  <div id="da-logo-img">
+                      <a href="dashboard.html">
+                          <img src="http://img5.duitang.com/uploads/files/201312/24/20131224171644_TXGCC.png" alt="堆糖组件库">
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div id="da-content">
+    <div class="da-container clearfix">
+      <div id="da-sidebar-separator"></div>
+      <div id="da-sidebar">
+          <div id="da-main-nav" class="btn-container">
+              <ul>
+                  <li class="active">
+                    <a href="#">
+                        <!-- Icon Container -->
+                        <span class="da-nav-icon">
+                              <i class="icon-edit"></i>
+                          </span>
+                        DT angular组件集合
+                      </a>
+                      <ul>
+                          <li><a href="#/1/">上传组件</a></li>
+                          <li><a href="#/2/">字符串截取</a></li>
+                          <li><a href="#/3/">JsonTree</a></li>
+                          <li><a href="#/4/">点击弹窗</a></li>
+                      </ul>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      <div id="da-content-wrap">
+        <div id="da-content-area">
+          <div class="row-fluid">
+            <!-- 上传控件-->
+            <div class="da-panel">
+              <div class="da-panel-header">
+                <span class="da-panel-title"><i class="icol-text-list-bullets"></i>上传组件</span>
+              </div>
+              <div class="da-panel-content">
+                <h3>基本使用</h3>
+                <pre>&lt;script src="../../static/angular/js/directive/DtUploadDirective.js"&gt;&lt;/script&gt;<br>&lt;dt-image-upload  ng-model="imgSrcModel" /&gt;</pre>
+                <div class="row-line">
+                  <dt-image-upload ng-model="imgSrcModel"/>
+                </div>
+                <h3>使用文本框绑定|图片预览</h3>
+                <div class="row-line">
+                  <input type="text" ng-model="imgSrcModel1">
+                  <dt-image-upload ng-model="imgSrcModel1"></dt-image-upload><br>
+                  <img ng-src="{{imgSrcModel1}}" width="100" height="100" />
+                </div>
+              </div>
+            </div>
+
+            <!-- 数字固定成几位数 -->
+            <div class="da-panel">
+              <div class="da-panel-header">
+                <span class="da-panel-title"><i class="icol-text-list-bullets"></i>字符串自动截取</span>
+              </div>
+              <div class="da-panel-content">
+                <h3>基本使用</h3>
+                <pre>&lt;script src="../../static/angular/js/directive/baseDirective.js"&gt;&lt;/script&gt;<br>&lt;input ng-model='jsonStr'  type='text' num_limit num='4' &gt;</pre>
+                <div class="row-line">
+                  <input type="text" ng-model="numberModel" num-limit num='4'>
+                  数据：{{numberModel}}
+                </div>
+              </div>
+            </div>
+
+            <!--JsonToTree-->
+            <div class="da-panel">
+              <div class="da-panel-header">
+                <span class="da-panel-title"><i class="icol-text-list-bullets"></i>JsonTree</span>
+              </div>
+              <div class="da-panel-content">
+                <h3>基本使用</h3>
+                <pre>&lt;script src="../../static/libs/jsoneditor/jsoneditor.js">&lt;/script &gt;<br>&lt; link rel="stylesheet" type="text/css" href="../../static/libs/jsoneditor/jsoneditor.min.css" &gt;<br>&lt;json-tree ng-model='jsonStr' init-json="{{jsonStr}}"&gt;&lt;/json-tree&gt;</pre>
+                <div class="row-line">
+                 <json-tree ng-model='jsonStr' init-json="{{jsonStr}}"></json-tree>
+                </div>
+              </div>
+            </div>
+
+            <!-- ngConfirmClick -->
+            <div class="da-panel">
+              <div class="da-panel-header">
+                <span class="da-panel-title"><i class="icol-text-list-bullets"></i>ngConfirmClick</span>
+              </div>
+              <div class="da-panel-content">
+                <h3>基本使用</h3>
+                <pre>&lt;script src="../../static/angular/js/directive/ngConfirmClickDirective.js"&gt;<br>&lt;button ng-confirm-click="描述" class="btn" &gt;</pre>
+                <div class="row-line">
+                 <button ng-confirm-click="描述啊啊啊啊?" class="btn">confim 弹窗</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

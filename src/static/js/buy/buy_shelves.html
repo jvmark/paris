@@ -1,0 +1,141 @@
+<div id="da-wrapper">
+  <!-- 头部 -->
+  <div ng-include src="'/static/js/buy/base_header.html'"></div>
+  <!-- 身体 -->
+  <div id="da-content">
+    <!-- Container -->
+    <div class="da-container clearfix">
+      <div ng-include src="'/static/js/buy/base_sidebar.html'"></div>
+      <!-- 右侧内容 -->
+      <div id="da-content-wrap" class="clearfix">
+        <div id="da-content-area">
+          <div class="span12" style="float:none">
+            <div class="da-panel ">
+              <div class="da-panel-header">
+                <span class="da-panel-title">
+                  新增/修改商品信息
+                </span>
+              </div>
+              <div class="da-panel-content da-form-container">
+                <div class="da-form" >
+                  <div class="da-form-inline">
+                    <div class="da-form-row">
+                      <form method="POST" enctype="multipart/form-data">
+                        <span style="font-size: 14px;">新增商品——选择excel：</span>
+                        <input type="file" id="uploadNew" name="local_file">
+                        <input type="submit" value="上传" class="btn btn-primary" ng-click="upload('uploadNew')">
+                      </form>
+                    </div>
+                    <div class="da-form-row">
+                      <form method="POST" enctype="multipart/form-data">
+                        <span style="font-size: 14px;">修改商品——选择excel：</span>
+                        <input type="file" id="uploadModify" name="local_file">
+                        <input type="submit" value="上传" class="btn btn-primary" ng-click="upload('uploadModify')">
+                      </form>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="da-panel " style="margin-top:15px;">
+              <div class="da-panel-header">
+                <span class="da-panel-title">
+                  查询商品信息
+                </span>
+              </div>
+              <div class="da-panel-content da-form-container">
+                <form id="da-ex-validate3" class="da-form" novalidate="novalidate">
+                  <div class="da-form-inline">
+                    <div class="da-form-row">
+                      <p class="h-label">查询条件：</p>
+                      <div class="l-span2" style="margin-right: 10px;">
+                        <select ng-model="queryMethod" ng-options="query.value as query.text for query in queryMaps">
+                        </select>
+                      </div>
+                      <p class="h-label">值：</p>
+                        <div ng-if="queryMethod == 1">
+                          <input type="text" ng-model="query_batch_no">
+                          <a href="#/shelves/?page=1&limit=24&batch={{query_batch_no}}" class="btn btn-primary">查询</a>
+                        </div>
+                        <div ng-if="queryMethod == 2">
+                          <input type="text" ng-model="query_inventory_id">
+                          <a href="#/shelves/?page=1&limit=24&inventory_id={{query_inventory_id}}" class="btn btn-primary">查询</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="da-panel collapsible" >
+              <div class="da-panel-header">
+                <span class="da-panel-title">
+                  查询结果
+                </span>
+                <div class="da-panel-toggler"><span></span></div>
+              </div>
+              <div class="da-panel-inner-wrap">
+                <div class="da-panel-content da-table-container">
+                  <table class="da-table checkable">
+                    <thead>
+                      <tr>
+                        <th style="width:5%;padding:20px 0;">商品ID</th>
+                        <th style="width:5%;padding:20px 0;">供应商名称</th>
+                        <!-- <th style="width:5%;padding:20px 0;">商品简介（功能特点卖点介绍）</th> -->
+                        <!-- <th style="width:5%;padding:20px 0;">商品品类</th> -->
+                        <th style="width:5%;padding:20px 0;">商品名称</th>
+                        <!-- <th style="width:5%;padding:20px 0;">商品属性</th> -->
+                        <!-- <th style="width:5%;padding:20px 0;">购买须知</th> -->
+                        <th style="width:5%;padding:20px 0;">库存量</th>
+                        <th style="width:5%;padding:20px 0;">限购量</th>
+                        <th style="width:5%;padding:20px 0;">市场单价</th>
+                        <th style="width:5%;padding:20px 0;">销售单价</th>
+                        <th style="width:5%;padding:20px 0;">结算价格</th>
+                        <th style="width:5%;padding:20px 0;">返点</th>
+                        <th style="width:5%;padding:20px 0;">团期ID</th>
+                        <th style="width:5%;padding:20px 0;">上线时间</th>
+                        <th style="width:5%;padding:20px 0;">下线时间</th>
+                       <!--  <th style="width:5%;padding:20px 0;">图片1</th>
+                        <th style="width:5%;padding:20px 0;">图片2</th>
+                        <th style="width:5%;padding:20px 0;">图片3</th>
+                        <th style="width:5%;padding:20px 0;">图片4</th>
+                        <th style="width:5%;padding:20px 0;">图片5</th> -->
+                      </tr>
+                    </thead>
+                    <tbody id="pg-table">
+                      <tr ng-repeat="item in object_list">
+                        <td><a href="#/shelves/edit/?id={{item.id}}" target="_blank">{{item.id}}</a></td>
+                        <td>{{item.supplier_name}}</td>
+                        <!-- <td>{{item.inventory_desc}}</td> -->
+                        <!-- <td>{{item.inventory_cat}}</td> -->
+                        <td>{{item.inventory_name}}</td>
+
+                        <!-- <td>{{item.inventory_attr}}</td> -->
+                        <!-- <td>{{item.agreement}}</td> -->
+                        <td>{{item.count}}</td>
+                        <td>{{item.buy_limit}}</td>
+                        <td>{{item.market_price}}</td>
+                        <td>{{item.sale_price}}</td>
+                        <td>{{item.settle_price}}</td>
+                        <td>{{item.refund_rate}}</td>
+                        <td>{{item.batch_no}}</td>
+                        <td>{{item.onsale_time}}</td>
+                        <td>{{item.offsale_time}}</td>
+                        <!-- <td ng-repeat="picture in item.pictures">{{picture}}</td> -->
+                        <!-- <td>图片1</td>
+                        <td>图片1</td>
+                        <td>图片1</td>
+                        <td>图片1</td> -->
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div ng-include src="'/static/js/include/prevnextpaginator.html'"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+/***************************************** 水平滚动样式 标记号 SG-HMarquee **********************************************/
+.SG-HMarquee .SG-Marquee{width:868px;}
+.SG-HMarquee .SG-Screen{width:32766px;zoom:1;overflow:hidden;}
+.SG-HMarquee .SG-Container{float:left;}
+
+.SG-HMarquee{overflow:hidden;zoom:1;font-size:12px;border:1px solid #e3e3e3;background:#f3f3f3;width:950px}
+.SG-HMarquee .SG-Marquee{width:868px;overflow:hidden;float:left;}
+.SG-HMarquee .SG-Screen{width:32766px;zoom:1;overflow:hidden;}
+.SG-HMarquee .SG-Container{float:left;}
+
+/*按钮样式*/
+.SG-HMarquee .SG-LeftBotton,.SG-HMarquee .SG-RightBotton{width:15px;height:72px;float:left;background:url(http://img.china.alibaba.com/images/unsort/module/picr_1.gif) no-repeat;margin:10px 12px 10px 12px}
+.SG-HMarquee .SG-LeftBotton{background-position: 0 0;}
+.SG-HMarquee .SG-RightBotton{background-position: 0 -100px;}
+.SG-HMarquee .SG-LeftBotton:hover{background-position: -20px 0;}
+.SG-HMarquee .SG-RightBotton:hover{background-position: -20px -100px;}
+/*按钮样式 结束*/
+
+/*循环单元样式*/
+.SG-HMarquee .pl img{display:block;cursor:pointer;border:none;margin:6px auto 1px auto;}
+.SG-HMarquee .pl{width:122px;border:1px solid red;float:left;float:left;text-align:center;line-height:24px;color:#167bb8;text-decoration:underline;}
+.SG-HMarquee a.pl:hover{border:1px solid #ff9900;color:#ff9900;background:#fff}
+/*循环单元样式 结束*/
+
+
+/***************************************** 垂直滚动样式 标记号 SG-VMarquee (可供修改) **********************************************/
+.SG-VMarquee .SG-Marquee{}
+.SG-VMarquee .SG-Screen{height:auto;zoom:1;overflow:hidden;}
+.SG-VMarquee .SG-Container{float:left;}
+
+.SG-VMarquee{overflow:hidden;zoom:1;font-size:12px;border:1px solid #e3e3e3;background:#f3f3f3;}
+.SG-VMarquee .SG-Marquee{float:left;overflow:hidden;height:868px;}
+.SG-VMarquee .SG-Screen{height:10000px;width:124px;zoom:1;}
+
+/*按钮样式*/
+.SG-VMarquee .SG-LeftBotton,.SG-VMarquee .SG-RightBotton{width:15px;height:72px;float:left;background:url(http://img.china.alibaba.com/images/unsort/module/picr_1.gif) no-repeat;margin:10px 12px 10px 12px}
+.SG-VMarquee .SG-LeftBotton{background-position: 0 0;}
+.SG-VMarquee .SG-RightBotton{background-position: 0 -100px;}
+.SG-VMarquee .SG-LeftBotton:hover{background-position: -20px 0;}
+.SG-VMarquee .SG-RightBotton:hover{background-position: -20px -100px;}
+/*按钮样式 结束*/
+
+/*循环单元样式*/
+.SG-VMarquee .pl img{display:block;cursor:pointer;border:none;margin:6px auto 1px auto;}
+.SG-VMarquee .pl{width:122px;height:122px;border:1px solid red;float:left;float:left;text-align:center;line-height:24px;color:#167bb8;text-decoration:underline;}
+.SG-VMarquee a.pl:hover{border:1px solid #ff9900;color:#ff9900;background:#fff}
+/*循环单元样式 结束*/

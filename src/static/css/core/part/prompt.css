@@ -1,0 +1,16 @@
+/* 
+@说明：产品级组件样式文件，对应流程中的提示样式，比如操作成功后的提示icon
+@作者：balibell 
+@时间：2010-06-19
+*/
+
+
+.prompt{margin:32px 32px 0 48px;padding:0 0 48px 0;font-size:14px;}
+.prompt h3{padding-top:8px;padding-left:60px;color:#666;font-size:14px;}
+.prompt p{margin:8px 0 0;color:#666;font-size:12px;}
+.prompt-success p,.prompt-fail p{padding-left:60px;}
+
+.prompt-success{background-position:-80px -40px;}
+.prompt-fail{background-position:-120px 0px;}
+.prompt-alert{background-position:-40px -80px;}
+

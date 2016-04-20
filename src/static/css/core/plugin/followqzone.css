@@ -1,0 +1,12 @@
+/* 
+@说明：弹出 iframe框，关注堆糖 qzone 账号，
+@作者：balibell 
+@时间：2012-06-30
+*/
+
+.SG-followqzone{position:absolute;top:100px;left:0;z-index:99999;border:1px solid #ddd;box-shadow:0 0 8px rgba(204, 204, 204, 0.6);background-color:#fff;}
+.SG-followqzone h3{overflow:hidden;height:30px;line-height:31px;padding:0 0 0 12px;color:#fff;background-color:#f4699b;}
+.SG-followqzone .duitanglogo{padding:56px 0 0 8px;margin:20px auto 0;background:url(http://img4.duitang.com/uploads/people/201206/30/20120630145519_FsM28.png) center top no-repeat;text-align:center;}
+.SG-followqzone iframe{display:block;width:62px;height:30px;padding:0 0 0 0;margin:8px auto 0;border:none;}
+.SG-followqzone h3 a:link,.SG-followqzone h3 a:visited{float:right;+display:inline;overflow:hidden;width:30px;height:30px;line-height:31px;line-height:27px;text-align:center;text-decoration:none;color:#fff;background-color:#f4699b}
+.SG-followqzone h3 a:hover{text-decoration:none;background-color:#f19191;}

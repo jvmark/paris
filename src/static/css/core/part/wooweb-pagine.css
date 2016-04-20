@@ -1,0 +1,22 @@
+/*
+@说明：Web 产品级公用组件样式文件，对应woo 瀑布流组件 分页码翻页器
+@作者：balibell
+@时间：2013-10-28
+*/
+
+.woo-pbr{height:60px;overflow:hidden;padding-top:16px;line-height:1;text-align:center;}
+.woo-pbr .woo-dib{height:100%}
+.woo-pbr li.woo-cur,
+.woo-pbr a:link,
+.woo-pbr a:visited{float:left;+display:inline;min-width:40px;height:24px;padding:10px 4px 0;+height:26px;+padding-top:8px;white-space:no-wrap;word-break:keep-all;text-align:center;border:1px solid #e3e2e1;border-radius:4px;background-color:#fff;color:#444444;font-size:14px;}
+.woo-pbr a:hover{text-decoration:none;background-color:#f6f6f6;color:#444444;}
+.woo-pbr li{height:40px;float:left\9;display:inline\9;margin:0 4px 0 0;}
+.woo-pbr li.woo-cur{font-weight:bold;color:#fff;background-color:#ff4466;}
+.woo-pbr li.woo-ell{margin:14px 8px 0 6px;font-size:10px;font-weight:bold;+font-size:12px;+font-weight:normal;}
+@media all and (min-width: 0px){ .woo-pbr a{display:inline-block;float:none}.woo-pbr li{float:left}}{}
+.woo-pbr a.woo-pre,
+.woo-pbr a.woo-nxt{width:68px;font-weight:normal;}
+
+.woo-pbr .woo-dib{float:none !important;display:inline-block;display:-moz-inline-box;-moz-box-align:stretch;+display:inline-block;vertical-align:middle}
+.woo-pbr .woo-dib{+display:inline}
+@media all and (min-width: 0px){ .woo-pbr .woo-dib{display:inline-block} }{}

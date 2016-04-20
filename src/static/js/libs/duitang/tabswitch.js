@@ -1,0 +1,4 @@
+/*
+@说明： Tab Switch jQuery plugin
+*/
+(function(){$.fn.tabswitch=function(h,c,f){var d=this;if(typeof h!=="function"){f=c;c=h;h=$.noop}if(typeof c!=="string"){f=c;c=""}var a=$.extend({},$.fn.tabswitch.defaults,f);a.fn=h;var k=!!c;var j=$(a.cont),b=k?$(c,d):d,g=a.focus;i(a.index);if(k){this.delegate(c,a.event,e)}else{this.bind(a.event,e)}function e(l){l.preventDefault();i(b.index(this),true)}function i(p,l){var r=b,s,q=b.index(s),m=-1,n=-1,o=p;s=r.filter("."+g);q=b.index(s);r.add(j).removeClass(g);j.css("display","none").eq(o).css("display","block").add(b.eq(p)).addClass(g);if(typeof a.fn==="function"){a.fn(b,j,o,q,l)}}return d};$.fn.tabswitch.defaults={cont:".tabswitch-cont",focus:"cur",index:0,event:"click"}})();
