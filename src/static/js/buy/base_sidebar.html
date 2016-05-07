@@ -6,7 +6,7 @@
   <div id="da-sidebar-toggle"></div>
   <div id="da-main-nav" class="btn-container">
     <ul  ng-controller="buySidebarCtrl">
-      <li ng-model=sidebarData ng-repeat="arr in sidebarData">
+      <li ng-model=sidebarData ng-repeat="arr in sidebarData| filter:{name:userType}">
         <a href="javascript:;">
           <!-- Icon Container -->
           <span class="da-nav-icon">

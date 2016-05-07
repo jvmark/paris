@@ -16,45 +16,40 @@ angular.module('buyService', [])
         }
       },
       student: {
-        addStuInfo: function(params_) {
-          return BaseService.get('/napi/recruitment/all/', {params: params_}).then(function(data_) {
+        saveStuInfo: function(params_) {
+          return BaseService.post('/napi/student/save/', params_).then(function(data_) {
             return data_;
           });
         },
-        getStuInfo: function(params_) {
-          return BaseService.get('/napi/recruitment/all/', {params: params_}).then(function(data_) {
+        getStuInfoAll: function(params_) {
+          return BaseService.get('/napi/student/all/', params_).then(function(data_) {
             return data_;
           });
         },
-        editStuInfo: function(params_) {
-          return BaseService.get('/napi/recruitment/all/', {params: params_}).then(function(data_) {
+        getMyStuInfo: function(params_) {
+          return BaseService.get('/napi/student/by_id/', {params: params_}).then(function(data_) {
             return data_;
           });
         },
         delStuInfo: function(params_) {
-          return BaseService.get('/napi/recruitment/all/', {params: params_}).then(function(data_) {
+          return BaseService.post('/napi/student/delete/', params_).then(function(data_) {
             return data_;
           });
         }
       },
       company: {
-        addComInfo: function(params_) {
-          return BaseService.get('/napi/recruitment/all/', {params: params_}).then(function(data_) {
+        saveComInfo: function(params_) {
+          return BaseService.post('/napi/company/save/', params_).then(function(data_) {
             return data_;
           });
         },
-        getComInfo: function(params_) {
-          return BaseService.get('/napi/recruitment/all/', {params: params_}).then(function(data_) {
-            return data_;
-          });
-        },
-        editComInfo: function(params_) {
-          return BaseService.get('/napi/recruitment/all/', {params: params_}).then(function(data_) {
+        getComInfoAll: function(params_) {
+          return BaseService.get('/napi/company/all/', {params: params_}).then(function(data_) {
             return data_;
           });
         },
         delComInfo: function(params_) {
-          return BaseService.get('/napi/recruitment/all/', {params: params_}).then(function(data_) {
+          return BaseService.post('/napi/company/delete/', params_).then(function(data_) {
             return data_;
           });
         }

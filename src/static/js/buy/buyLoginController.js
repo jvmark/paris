@@ -6,11 +6,21 @@ angular.module('buyLoginController', [])
           BuyService.logInOrOut.login({
             "username": eitem.login_name,
             "password": eitem.pswd,
-            // "type": eitem.type
-            "type": 0
+            "type": eitem.type
           }).then(function(jsn) {
-            document.cookie="isLogin="+1;
-            document.cookie="username="+eitem.login_name;
+            window.localStorage.setItem('isLogin',true);
+            window.localStorage.setItem('username',eitem.login_name);
+            window.localStorage.setItem('userid',jsn.data);
+            var usertype = '';
+            if(eitem.type === '0'){
+              usertype = '管理员';
+            }else if(eitem.type === '1'){
+              usertype = '学生';
+            }else if(eitem.type === '2'){
+              usertype = '企业';
+            }
+            window.localStorage.setItem('usertype',usertype);
+            
             var nextUrl = GetRequest().next || 'order';
             location.href = '/#' + nextUrl;
           })

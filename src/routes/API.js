@@ -1,17 +1,4 @@
 function getNavigationList(req, res) {
-  // if (req.cookies.username == 'bjyy1234') {
-  //   return res.json({
-  //     status: 1,
-  //     data: [{
-  //       "name": "产品库",
-  //       "items": [{
-  //         "name": "条码扫描",
-  //         "url": "/barcode/",
-  //       }]
-  //     }]
-  //   })
-  // }
-
   var items = [{
     "name": "学生",
     "items": [{
@@ -32,6 +19,9 @@ function getNavigationList(req, res) {
     },{
       "name": "就业信息列表",
       "url": "/jobInfoList/"
+    },{
+      "name": "学生信息查询",
+      "url": "/stuInfoQuery/"
     }]
   }, {
     "name": "管理员",

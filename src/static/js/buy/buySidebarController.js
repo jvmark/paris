@@ -3,6 +3,7 @@ angular.module('buySidebarController', [])
     function($scope, BuyService, $routeParams) {
       $scope.sidebarData='';
       getSidebar();
+      $scope.userType = window.localStorage.getItem('usertype');
 
       function getSidebar() {
         BuyService.sidebar.getSidebarList().then(function(jsn) {

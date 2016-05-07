@@ -53,21 +53,14 @@
                         </tr>
                       </thead>
                       <tbody role="alert" aria-live="polite" aria-relevant="all">
-                        <tr class="odd">
-                          <td>11</td>
-                          <td class="sorting_1">微云</td>
-                          <td>上海</td>
-                          <td>云计算，智能网络</td>
-                          <td><a target="_blank" class="btn btn-primary" href="javascript:;" ng-click="edit()" data-type="topic">编辑</a>
-                          <a target="_blank" class="btn btn-primary audit_topic_block" href="javascript:;" ng-click="delete()" data-type="topic" style="margin-left: 20px;">删除</a></td>
-                        </tr>
+                        
                         <tr class="odd" ng-repeat="company in companyList">
-                          <td>{{company.name}}</td>
-                          <td class="sorting_1"></td>
+                          <td>{{company.id}}</td>
+                          <td class="sorting_1">{{company.name}}</td>
                           <td>{{company.city}}</td>
                           <td>{{company.description}}</td>
-                          <td><a target="_blank" class="btn btn-primary" href="javascript:;" ng-click="edit()" data-type="topic">编辑</a>
-                          <a target="_blank" class="btn btn-primary audit_topic_block" href="javascript:;" ng-click="delete()" data-type="topic" style="margin-left: 20px;">删除</a></td>
+                          <td><a target="_blank" class="btn btn-primary" href="javascript:;" ng-click="edit(company)" data-type="topic">编辑</a>
+                          <a target="_blank" class="btn btn-primary audit_topic_block" href="javascript:;" ng-click="delComInfo(company)" data-type="topic" style="margin-left: 20px;">删除</a></td>
                         </tr>
                       </tbody>
                     </table>
@@ -104,7 +97,7 @@
     邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：<input type="text" ng-model="editCom.mail" required>
   </div>
   <div class="btn-row">
-    <input value="录入" type="submit" class="btn btn-success" ng-click="addComInfo();" style="float:left;">
+    <input value="录入" type="submit" class="btn btn-success" ng-click="updateComInfo();" style="float:left;">
   </div>
 </form>
 </script>

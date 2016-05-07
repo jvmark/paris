@@ -71,7 +71,7 @@ app.use(bodyParser.json());
 
 
 app.use('/napi/buyadmin/', buyAdminRouter);
-app.use('/napi/', duitangRouter);
+app.use('/napi/', buyAdminRouter);
 app.use('/api/', apiRouter);
 
 app.use('/static', express.static(__dirname + '/static'));

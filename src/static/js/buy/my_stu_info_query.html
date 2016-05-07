@@ -55,21 +55,14 @@
                         </tr>
                       </thead>
                       <tbody role="alert" aria-live="polite" aria-relevant="all">
-                        <tr class="odd">
-                          <td>20110001</td>
-                          <td class="sorting_1">邓超</td>
-                          <td>电气1101</td>
-                          <td>电气</td>
-                          <td><a target="_blank" class="btn btn-primary" href="javascript:;" ng-click="edit()" data-type="topic">编辑</a>
-                          <a target="_blank" class="btn btn-primary audit_topic_block" href="javascript:;" ng-click="delete()" data-type="topic" style="margin-left: 20px;">删除</a></td>
-                        </tr>
-                        <tr class="odd" ng-repeat="photo in photo.docs">
-                          <td>{{photo.id}}</td>
-                          <td class="sorting_1"></td>
-                          <td>{{photo.msg}}</td>
-                          <td>{{photo.status}}</td>
-                          <td><a target="_blank" class="btn btn-primary" href="javascript:;" ng-click="edit()" data-type="topic">编辑</a>
-                          <a target="_blank" class="btn btn-primary audit_topic_block" href="javascript:;" ng-click="delete()" data-type="topic" style="margin-left: 20px;">删除</a></td>
+                        
+                        <tr class="odd" ng-repeat="student in studentList">
+                          <td>{{student.sno}}</td>
+                          <td class="sorting_1">{{student.name}}</td>
+                          <td>{{student.className}}</td>
+                          <td>{{student.major}}</td>
+                          <td><a target="_blank" class="btn btn-primary" href="javascript:;" ng-click="edit(student)" data-type="topic">编辑</a>
+                          <a target="_blank" class="btn btn-primary audit_topic_block" href="javascript:;" ng-click="delStuInfo(student)" data-type="topic" style="margin-left: 20px;">删除</a></td>
                         </tr>
                       </tbody>
                     </table>
@@ -79,7 +72,7 @@
               </div>
             </div>
             <!-- angular 分页组件  只提供上下翻页 -->
-            <div ng-include src="'/static/angular/js/include/prevnextpaginator.html'"></div>
+            <!-- <div ng-include src="'/static/angular/js/include/prevnextpaginator.html'"></div> -->
           </div>
         </div>
       </div>
@@ -91,19 +84,21 @@
 <script type="text/ng-template" id="editTemp">
 <form class="da-form da-form-inline" ng-model="editStu">
   <div class="da-form-row">
+    学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：<input type="text" ng-model="editStu.sno">
+  </div>
+  <div class="da-form-row">
     姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：<input type="text" ng-model="editStu.name">
   </div>
   <div class="da-form-row">
-    性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：<input type="text" ng-model="editStu.sex">
+    性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：
+    <input type="radio" ng-model="editStu.sex" value="1">男
+    <input type="radio" ng-model="editStu.sex" value="0">女
   </div>
   <div class="da-form-row">
     年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄：<input type="text" ng-model="editStu.age">
   </div>
   <div class="da-form-row">
     名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;族：<input type="text" ng-model="editStu.nation">
-  </div>
-  <div class="da-form-row">
-    学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：<input type="text" ng-model="editStu.sno">
   </div>
   <div class="da-form-row">
     专&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业：<input type="text" ng-model="editStu.major">
@@ -115,7 +110,7 @@
     电话号码：<input type="text" ng-model="editStu.phoneNumber">
   </div>
   <div class="btn-row">
-    <input value="添加" type="submit" class="btn btn-success" ng-click="updateSpu();" style="float:left;">
+    <input value="添加" type="submit" class="btn btn-success" ng-click="updateStuInfo();" style="float:left;">
   </div>
 </form>
 </script>

@@ -22,7 +22,9 @@
                     姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：<input type="text" ng-model="stu.name">
                   </div>
                   <div class="da-form-row">
-                    性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：<input type="text" ng-model="stu.sex">
+                    性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：
+                    <input type="radio" ng-model="stu.sex" value="1">男
+                    <input type="radio" ng-model="stu.sex" value="0">女
                   </div>
                   <div class="da-form-row">
                     年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄：<input type="text" ng-model="stu.age">
@@ -37,13 +39,13 @@
                     专&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业：<input type="text" ng-model="stu.major">
                   </div>
                   <div class="da-form-row">
-                    班&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;级：<input type="text" ng-model="stu.classname">
+                    班&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;级：<input type="text" ng-model="stu.className">
                   </div>
                   <div class="da-form-row">
-                    电话号码：<input type="text" ng-model="stu.phoneNum">
+                    电话号码：<input type="text" ng-model="stu.phoneNumber">
                   </div>
                   <div class="btn-row">
-                    <input value="添加" type="submit" class="btn btn-success" ng-click="updateSpu();" style="float:left;">
+                    <input value="添加" type="submit" class="btn btn-success" ng-click="addStuInfo();" style="float:left;">
                   </div>
                 </form>
               </div>

@@ -2,14 +2,15 @@ angular.module('myAddComInfoController', [])
   .controller('addComInfoPageCtrl', ['$scope', 'BaseService', 'BuyService', '$routeParams',
     function($scope, BaseService, BuyService, $routeParams) {
       $scope.addComInfo = function(){
-        BuyService.company.addComInfo({
-          "username": eitem.login_name,
-          "password": eitem.pswd
+        BuyService.company.saveComInfo({
+          'name': $scope.company.name,
+          'city': $scope.company.city,
+          'description': $scope.company.description,
+          'mail': $scope.company.mail,
+          'homePage': $scope.company.homePage,
+          "password": 123456
         }).then(function(jsn) {
-          document.cookie="isLogin="+1;
-          document.cookie="isLogin="+login_name;
-          var nextUrl = GetRequest().next || 'order';
-          location.href = '/#' + nextUrl;
+          alert('成功');
         })
       }
   }]);
