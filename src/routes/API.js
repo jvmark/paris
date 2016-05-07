@@ -13,73 +13,43 @@ function getNavigationList(req, res) {
   // }
 
   var items = [{
-    "name": "订单系统",
+    "name": "学生",
     "items": [{
-      "name": "订单管理",
-      "url": "/order/"
+      "name": "个人信息修改",
+      "url": "/changeStuInfo/"
     }, {
-      "name": "运单号上传",
-      "url": "/ticket/upload/"
-    }, {
-      "name": "退货单管理",
-      "url": "/return/"
-    }, {
-      "name": "发货表下载",
-      "url": "/order/payorders/"
-    }, {
-      "name": "结算单管理",
-      "url": "/settle/"
-    }, {
-      "name": "结算单下载",
-      "url": "/settle/download/"
+      "name": "就业信息查询",
+      "url": "/jobInfoQuery/"
     }]
   }, {
-    "name": "产品库",
+    "name": "企业",
     "items": [{
-      "name": "SPU管理",
-      "url": "/SPU/list/"
-    }, {
-      "name": "新增SPU",
-      "url": "/SPU/add/"
-    }, {
-      "name": "类目管理",
-      "url": "/category/"
-    }, {
-      "name": "属性管理",
-      "url": "/attribute/"
-    }, {
-      "name": "品牌管理",
-      "url": "/SPUBRAND/add/",
-    }, {
-      "name": "条码扫描",
-      "url": "/barcode/",
+      "name": "企业信息修改",
+      "url": "/changeComInfo/"
+    },{
+      "name": "就业信息录入",
+      "url": "/addJobInfo/"
+    },{
+      "name": "就业信息列表",
+      "url": "/jobInfoList/"
     }]
   }, {
-    "name": "商品系统",
+    "name": "管理员",
     "items": [{
-      "name": "上下架管理",
-      "url": "/shelves/"
+      "name": "学生信息录入",
+      "url": "/addStuInfo/"
     }, {
-      "name": "供应商管理",
-      "url": "/supplier/"
-    }]
-  }, {
-    "name": "营销系统",
-    "items": [{
-      "name": "营销活动管理",
-      "url": "/promotion/"
+      "name": "学生信息查询",
+      "url": "/stuInfoQuery/"
     }, {
-      "name": "优惠券生成",
-      "url": "/coupon/create/"
+      "name": "企业信息录入",
+      "url": "/addComInfo/"
     }, {
-      "name": "优惠券发放",
-      "url": "/coupon/send/"
-    }]
-  }, {
-    "name": "小工具",
-    "items": [{
-      "name": "外站商品搜索",
-      "url": "/tools/search/"
+      "name": "企业信息查询",
+      "url": "/comInfoQuery/"
+    }, {
+      "name": "就业信息查询",
+      "url": "/jobInfoQuery/"
     }]
   }];
 

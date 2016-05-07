@@ -42,14 +42,14 @@ var service = function(baseURL, authInfo) {
       }
       var j = request.jar();
       var url = baseURL + '/napi/login/';
-
       request({
         url: url,
         jar: j,
         method: 'POST',
         form: {
           username: username,
-          password: password
+          password: password,
+          type:0
         }
       }, function(error, response, body) {
         if (error) {

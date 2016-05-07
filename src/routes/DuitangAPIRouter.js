@@ -32,7 +32,7 @@ router.post('/login/', function(req, res, next) {
       baseURL = req.session.apiSettings.wwwAPI;
     }
     var service = DuitangAuthService(baseURL, req.session.authInfo);
-    var result = yield service.login(req.body.login_name, req.body.pswd);
+    var result = yield service.login(req.body.username, req.body.password);
     // 写 cookie
     req.session.authInfo = result.auth;
     req.session.duitangInfo = result.data;

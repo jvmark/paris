@@ -1,0 +1,110 @@
+<div id="da-wrapper">
+  <!-- 头部 -->
+  <div ng-include src="'/static/js/buy/base_header.html'"></div>
+  <!-- 身体 -->
+  <div id="da-content">
+    <!-- Container -->
+    <div class="da-container clearfix">
+      <div ng-include src="'/static/js/buy/base_sidebar.html'"></div>
+      <!-- 右侧内容 -->
+      <div id="da-content-wrap" class="clearfix">
+        <div id="da-content-area">
+          <div class="row-fluid">
+            <div class="span12">
+              <div class="da-panel">
+                <div class="da-panel-header">
+                  <span class="da-panel-title">
+                    <i class="icon-list"></i>就业信息查询
+                  </span>
+                </div>
+                <div class="da-panel-content da-form-container">
+                  <form class="da-form" id="form-club-query">
+                    <div class="da-form-inline">
+                      <div class="da-form-row">
+                        <select ng-model="info.type">
+                          <option selected="selected" value="name">公司名称</option>
+                          <option value="area">所在地</option>
+                        </select>
+                        <input type="text" ng-model="info.txt">
+                      </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="da-panel collapsible">
+              <div class="da-panel-header">
+                <span class="da-panel-title">
+                  <i class="icol-grid"></i>公司查询结果
+                </span>
+                <div class="da-panel-toggler"><span></span></div>
+              </div>
+              <div class="da-panel-inner-wrap">
+                <div class="da-panel-content da-table-container">
+                  <div id="da-ex-datatable-default_wrapper" class="dataTables_wrapper" role="grid">
+                    <table id="da-ex-datatable-default" class="da-table dataTable" aria-describedby="da-ex-datatable-default_info">
+                      <thead>
+                        <tr role="row">
+                          <th class="sorting" role="columnheader" tabindex="0" aria-controls="da-ex-datatable-default" rowspan="1" colspan="1" style="width: 10%;" aria-label="Rendering engine: activate to sort column ascending">
+                          公司ID</th>
+                          <th class="sorting" role="columnheader" tabindex="0" aria-controls="da-ex-datatable-default" rowspan="1" colspan="1" style="width: 15%;" aria-label="Platform(s): activate to sort column ascending">公司名称</th>
+                          <th class="sorting" role="columnheader" tabindex="0" aria-controls="da-ex-datatable-default" rowspan="1" colspan="1" style="width: 15%;" aria-label="Engine version: activate to sort column ascending">所在地</th>
+                          <th class="sorting" role="columnheader" tabindex="0" aria-controls="da-ex-datatable-default" rowspan="1" colspan="1" style="width: 20%;" aria-label="Engine version: activate to sort column ascending">描述信息</th>
+                          <th class="sorting" role="columnheader" tabindex="0" aria-controls="da-ex-datatable-default" rowspan="1" colspan="1" style="width: 20%;" aria-label="Engine version: activate to sort column ascending">操作</th>
+                        </tr>
+                      </thead>
+                      <tbody role="alert" aria-live="polite" aria-relevant="all">
+                        <tr class="odd">
+                          <td>11</td>
+                          <td class="sorting_1">微云</td>
+                          <td>上海</td>
+                          <td>云计算，智能网络</td>
+                          <td><a target="_blank" class="btn btn-primary" href="javascript:;" ng-click="edit()" data-type="topic">编辑</a>
+                          <a target="_blank" class="btn btn-primary audit_topic_block" href="javascript:;" ng-click="delete()" data-type="topic" style="margin-left: 20px;">删除</a></td>
+                        </tr>
+                        <tr class="odd" ng-repeat="company in companyList">
+                          <td>{{company.name}}</td>
+                          <td class="sorting_1"></td>
+                          <td>{{company.city}}</td>
+                          <td>{{company.description}}</td>
+                          <td><a target="_blank" class="btn btn-primary" href="javascript:;" ng-click="edit()" data-type="topic">编辑</a>
+                          <a target="_blank" class="btn btn-primary audit_topic_block" href="javascript:;" ng-click="delete()" data-type="topic" style="margin-left: 20px;">删除</a></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- <div class="dataTables_info" id="da-ex-datatable-default_info">共{{total}}条记录</div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- angular 分页组件  只提供上下翻页 -->
+            <div ng-include src="'/static/angular/js/include/prevnextpaginator.html'"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+</div>
+<script type="text/ng-template" id="editTemp">
+<form class="da-form da-form-inline" ng-model="editCom.name">
+  <div class="da-form-row">
+    名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：<input type="text" ng-model="editCom.name" required>
+  </div>
+  <div class="da-form-row">
+    城&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;市：<input type="text" ng-model="editCom.city" required>
+  </div>
+  <div class="da-form-row">
+    描&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;述：<input type="text" ng-model="editCom.description"required>
+  </div>
+  <div class="da-form-row">
+    公司主页：<input type="text" ng-model="editCom.homePage" required>
+  </div>
+  <div class="da-form-row">
+    邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：<input type="text" ng-model="editCom.mail" required>
+  </div>
+  <div class="btn-row">
+    <input value="录入" type="submit" class="btn btn-success" ng-click="addComInfo();" style="float:left;">
+  </div>
+</form>
+</script>

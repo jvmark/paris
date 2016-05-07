@@ -1,0 +1,47 @@
+<div id="da-wrapper">
+  <!-- 头部 -->
+  <div ng-include src="'/static/js/buy/base_header.html'"></div>
+  <!-- 身体 -->
+  <div id="da-content">
+    <!-- Container -->
+    <div class="da-container clearfix">
+      <div ng-include src="'/static/js/buy/base_sidebar.html'"></div>
+      <!-- 右侧内容 -->
+      <div id="da-content-wrap" class="clearfix">
+        <div id="da-content-area">
+          <div class="da-panel">
+            <div class="da-panel-header">
+              <span class="da-panel-title">
+                企业信息录入
+              </span>
+            </div>
+            <div class="da-form da-panel-content da-form-container">
+              <form class="da-form da-form-inline" ng-model="stu.name">
+                <div class="da-form-row">
+                  名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：<input type="text" ng-model="stu.name" required>
+                </div>
+                <div class="da-form-row">
+                  城&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;市：<input type="text" ng-model="stu.sex" required>
+                </div>
+                <div class="da-form-row">
+                  描&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;述：<input type="text" ng-model="stu.age"required>
+                </div>
+                <div class="da-form-row">
+                  公司主页：<input type="text" ng-model="stu.nation" required>
+                </div>
+                <div class="da-form-row">
+                  邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：<input type="text" ng-model="stu.sno" required>
+                </div>
+                <div class="btn-row">
+                  <input value="录入" type="submit" class="btn btn-success" ng-click="addComInfo();" style="float:left;">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+</div>

@@ -1,7 +1,7 @@
 // !!! 注意该配置位默认配置，请不要擅自修改，如需修改请通过 web 页面
 var config = {
-  wwwAPIDomain: 'localhost:8080',
-  buyAdminAPIDomain: 'localhost:8080',
+  wwwAPIDomain: '127.0.0.1:8080',
+  buyAdminAPIDomain: '127.0.0.1:8080',
 }
 
 // if (process.env.ENV == 'production') {

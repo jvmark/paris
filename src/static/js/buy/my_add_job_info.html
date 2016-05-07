@@ -1,0 +1,52 @@
+<div id="da-wrapper">
+  <!-- 头部 -->
+  <div ng-include src="'/static/js/buy/base_header.html'"></div>
+  <!-- 身体 -->
+  <div id="da-content">
+    <!-- Container -->
+    <div class="da-container clearfix">
+      <div ng-include src="'/static/js/buy/base_sidebar.html'"></div>
+      <!-- 右侧内容 -->
+      <div id="da-content-wrap" class="clearfix">
+        <div id="da-content-area">
+          <div class="span12" ng-show="page==1" ng-init="page=1;">
+            <div class="da-panel">
+              <div class="da-panel-header">
+                <span class="da-panel-title">
+                  就业信息录入
+                </span>
+              </div>
+              <div class="da-form da-panel-content da-form-container">
+                <form class="da-form da-form-inline">
+                  <div class="da-form-row">
+                    公司名称：<input type="text" ng-model="job.companyName">
+                  </div>
+                  <div class="da-form-row">
+                    所在城市：<input type="text" ng-model="job.city">
+                  </div>
+                  <div class="da-form-row">
+                    职位名称：<input type="text" ng-model="job.positionName">
+                  </div>
+                  <div class="da-form-row">
+                    职位描述：<input type="text" ng-model="job.description">
+                  </div>
+                  <div class="da-form-row">
+                    学历限制：<input type="text" ng-model="job.diplomaLimit">
+                  </div>
+                  <div class="da-form-row">
+                    薪资范围：<input type="text" ng-model="job.minSalary">－<input type="text" ng-model="job.maxSalary">
+                  </div>
+                  <div class="btn-row">
+                    <input value="添加" type="submit" class="btn btn-success" ng-click="updateSpu();" style="float:left;">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+</div>

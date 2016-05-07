@@ -4,9 +4,13 @@ angular.module('buyLoginController', [])
       $scope.login = function(eitem) {
         if (eitem.login_name && eitem.pswd) {
           BuyService.logInOrOut.login({
-            "login_name": eitem.login_name,
-            "pswd": eitem.pswd
+            "username": eitem.login_name,
+            "password": eitem.pswd,
+            // "type": eitem.type
+            "type": 0
           }).then(function(jsn) {
+            document.cookie="isLogin="+1;
+            document.cookie="username="+eitem.login_name;
             var nextUrl = GetRequest().next || 'order';
             location.href = '/#' + nextUrl;
           })

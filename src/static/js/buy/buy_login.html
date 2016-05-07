@@ -38,13 +38,17 @@
       <i class="fa fa-lock"></i>
       <input type="password" ng-model=loginData.pswd required />
     </div>
-    <!-- Container -->
-    <p>
-      请用堆糖用户名或密码登录
-    </p>
+    <div class="form-group" style="margin-top:10px;">
+      <i class="fa fa-lock">用户类型</i>
+      <select ng-model="loginData.type">
+        <option value="1" selected="selected">学生</option>
+        <option value="2">公司</option>
+        <option value="0">管理员</option>
+      </select>
+    </div>
     <div class="form-actions">
       <button type="submit" ng-click="login(loginData)" class="btn btn-danger">登录</button>
     </div>
-    <p><a href="/#/settings/api/">api配置</a></p>
+    <!-- <p><a href="/#/settings/api/">api配置</a></p> -->
   </form>
 </div>

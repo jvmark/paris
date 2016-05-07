@@ -1,0 +1,58 @@
+<div id="da-wrapper">
+  <!-- 头部 -->
+  <div ng-include src="'/static/js/buy/base_header.html'"></div>
+  <!-- 身体 -->
+  <div id="da-content">
+    <!-- Container -->
+    <div class="da-container clearfix">
+      <div ng-include src="'/static/js/buy/base_sidebar.html'"></div>
+      <!-- 右侧内容 -->
+      <div id="da-content-wrap" class="clearfix">
+        <div id="da-content-area">
+          <div class="span12" ng-show="page==1" ng-init="page=1;">
+            <div class="da-panel">
+              <div class="da-panel-header">
+                <span class="da-panel-title">
+                  学生信息录入
+                </span>
+              </div>
+              <div class="da-form da-panel-content da-form-container">
+                <form class="da-form da-form-inline">
+                  <div class="da-form-row">
+                    姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：<input type="text" ng-model="stu.name">
+                  </div>
+                  <div class="da-form-row">
+                    性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：<input type="text" ng-model="stu.sex">
+                  </div>
+                  <div class="da-form-row">
+                    年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄：<input type="text" ng-model="stu.age">
+                  </div>
+                  <div class="da-form-row">
+                    名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;族：<input type="text" ng-model="stu.nation">
+                  </div>
+                  <div class="da-form-row">
+                    学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：<input type="text" ng-model="stu.sno">
+                  </div>
+                  <div class="da-form-row">
+                    专&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业：<input type="text" ng-model="stu.major">
+                  </div>
+                  <div class="da-form-row">
+                    班&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;级：<input type="text" ng-model="stu.classname">
+                  </div>
+                  <div class="da-form-row">
+                    电话号码：<input type="text" ng-model="stu.phoneNum">
+                  </div>
+                  <div class="btn-row">
+                    <input value="添加" type="submit" class="btn btn-success" ng-click="updateSpu();" style="float:left;">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+</div>

@@ -1,0 +1,47 @@
+<div id="da-wrapper">
+  <!-- 头部 -->
+  <div ng-include src="'/static/js/buy/base_header.html'"></div>
+  <!-- 身体 -->
+  <div id="da-content">
+    <!-- Container -->
+    <div class="da-container clearfix">
+      <div ng-include src="'/static/js/buy/base_sidebar.html'"></div>
+      <!-- 右侧内容 -->
+      <div id="da-content-wrap" class="clearfix">
+        <div id="da-content-area">
+          <div class="da-panel">
+            <div class="da-panel-header">
+              <span class="da-panel-title">
+                企业信息修改
+              </span>
+            </div>
+            <div class="da-form da-panel-content da-form-container">
+              <form class="da-form da-form-inline" ng-model="company">
+                <div class="da-form-row">
+                  名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：<input type="text" ng-model="company.name" required>
+                </div>
+                <div class="da-form-row">
+                  城&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;市：<input type="text" ng-model="company.city" required>
+                </div>
+                <div class="da-form-row">
+                  描&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;述：<input type="text" ng-model="company.description"required>
+                </div>
+                <div class="da-form-row">
+                  公司主页：<input type="text" ng-model="company.homePage" required>
+                </div>
+                <div class="da-form-row">
+                  邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：<input type="text" ng-model="company.mail" required>
+                </div>
+                <div class="btn-row">
+                  <input value="保存修改" type="submit" class="btn btn-success" ng-click="updateSpu();" style="float:left;">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+</div>

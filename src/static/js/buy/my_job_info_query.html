@@ -1,0 +1,118 @@
+<div id="da-wrapper">
+  <!-- 头部 -->
+  <div ng-include src="'/static/js/buy/base_header.html'"></div>
+  <!-- 身体 -->
+  <div id="da-content">
+    <!-- Container -->
+    <div class="da-container clearfix">
+      <div ng-include src="'/static/js/buy/base_sidebar.html'"></div>
+      <!-- 右侧内容 -->
+      <div id="da-content-wrap" class="clearfix">
+        <div id="da-content-area">
+          <div class="row-fluid">
+            <div class="span12">
+              <div class="da-panel">
+                <div class="da-panel-header">
+                  <span class="da-panel-title">
+                    <i class="icon-list"></i>就业信息查询
+                  </span>
+                </div>
+                <div class="da-panel-content da-form-container">
+                  <form class="da-form" id="form-club-query">
+                    <div class="da-form-inline">
+                      <div class="da-form-row">
+                      所在城市：<input type="text" ng-model="job.city">
+                      </div>
+                      <div class="da-form-row">
+                      职位名称：<input type="text" ng-model="job.name">
+                      </div>
+                      <div class="da-form-row">
+                      学历限制：<input type="text" ng-model="job.diploma">
+                      </div>
+                      <div class="da-form-row">
+                      薪资范围：<input type="text" ng-model="job.minisalary">－<input type="text" ng-model="job.maxsalary">
+                      </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="da-panel collapsible">
+              <div class="da-panel-header">
+                <span class="da-panel-title">
+                  <i class="icol-grid"></i>就业信息查询结果
+                </span>
+                <div class="da-panel-toggler"><span></span></div>
+              </div>
+              <div class="da-panel-inner-wrap">
+                <div class="da-panel-content da-table-container">
+                  <div id="da-ex-datatable-default_wrapper" class="dataTables_wrapper" role="grid">
+                    <table id="da-ex-datatable-default" class="da-table dataTable" aria-describedby="da-ex-datatable-default_info">
+                      <thead>
+                        <tr role="row">
+                          <th class="sorting" role="columnheader" tabindex="0" aria-controls="da-ex-datatable-default" rowspan="1" colspan="1" style="width: 10%;" aria-label="Rendering engine: activate to sort column ascending">
+                          ID</th>
+                          <th class="sorting" role="columnheader" tabindex="0" aria-controls="da-ex-datatable-default" rowspan="1" colspan="1" style="width: 20%;" aria-label="Platform(s): activate to sort column ascending">公司名称</th>
+                          <th class="sorting" role="columnheader" tabindex="0" aria-controls="da-ex-datatable-default" rowspan="1" colspan="1" style="width: 15%;" aria-label="Engine version: activate to sort column ascending">招聘职位</th>
+                          <th class="sorting" role="columnheader" tabindex="0" aria-controls="da-ex-datatable-default" rowspan="1" colspan="1" style="width: 15%;" aria-label="Engine version: activate to sort column ascending">公司所在地</th>
+                          <th class="sorting" role="columnheader" tabindex="0" aria-controls="da-ex-datatable-default" rowspan="1" colspan="1" style="width: 20%;" aria-label="Engine version: activate to sort column ascending">操作</th>
+                        </tr>
+                      </thead>
+                      <tbody role="alert" aria-live="polite" aria-relevant="all">
+                        <tr class="odd">
+                          <td>12</td>
+                          <td class="sorting_1">荣光</td>
+                          <td>ios开发</td>
+                          <td>深圳</td>
+                          <td><a target="_blank" class="btn btn-primary" href="javascript:;" ng-click="edit()" data-type="topic">编辑</a>
+                          <a target="_blank" class="btn btn-primary audit_topic_block" href="javascript:;" ng-click="delete()" data-type="topic" style="margin-left: 20px;">删除</a></td>
+                        </tr>
+                        <tr class="odd" ng-repeat="photo in photo.docs">
+                          <td>{{photo.id}}</td>
+                          <td class="sorting_1"></td>
+                          <td>{{photo.msg}}</td>
+                          <td>{{photo.status}}</td>
+                          <td><a target="_blank" class="btn btn-primary" href="javascript:;" ng-click="edit()" data-type="topic">编辑</a>
+                          <a target="_blank" class="btn btn-primary audit_topic_block" href="javascript:;" ng-click="delete()" data-type="topic" style="margin-left: 20px;">删除</a></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- <div class="dataTables_info" id="da-ex-datatable-default_info">共{{total}}条记录</div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- angular 分页组件  只提供上下翻页 -->
+            <div ng-include src="'/static/angular/js/include/prevnextpaginator.html'"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+</div>
+<script type="text/ng-template" id="editTemp">
+<form class="da-form da-form-inline" ng-model="jobInfo">
+  <div class="da-form-row">
+    公司名称：<input type="text" ng-model="jobInfo.companyName">
+  </div>
+  <div class="da-form-row">
+    所在城市：<input type="text" ng-model="jobInfo.city">
+  </div>
+  <div class="da-form-row">
+    职位名称：<input type="text" ng-model="jobInfo.positionName">
+  </div>
+  <div class="da-form-row">
+    职位描述：<input type="text" ng-model="jobInfo.description">
+  </div>
+  <div class="da-form-row">
+    学历限制：<input type="text" ng-model="jobInfo.diplomaLimit">
+  </div>
+  <div class="da-form-row">
+    薪资范围：<input type="text" ng-model="jobInfo.minSalary">－<input type="text" ng-model="jobInfo.maxSalary">
+  </div>
+  <div class="btn-row">
+    <input value="添加" type="submit" class="btn btn-success" ng-click="updateJobInfo();" style="float:left;">
+  </div>
+</form>
+</script>

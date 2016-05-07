@@ -1,35 +1,23 @@
 angular.module('buyLogInOrOutController', [])
   .controller('buyLogInOrOutCtrl', ['$scope', 'BuyService', '$routeParams', 'ngDialog',
     function($scope, BuyService, $routeParams, ngDialog) {
-      isLoginOrNot();
+      
+      $scope.username = getCookie('username') || '用户您好';
 
-      function isLoginOrNot() {
-        BuyService.logInOrOut.judgeLogStatus().then(function(jsn) {
-          if (jsn.status === 2) {
-            $scope.isLogin = false;
-            
-            // var a = GetUrlRelativePath();
-            // var c = a.split('#')[1];
-            // if(a!='/#/login/'){
-            //   location.href = '/#/login/?next='+c;
-            // }
-            
-          } else if (jsn.status === 1) {
-            $scope.isLogin = true;
-            $scope.username = jsn.data.username;
-          }
-        })
-      };
+      if(getCookie('isLogin')==1){
+        $scope.isLogin = true;
+      }else{
+        $scope.isLogin = false;
+        var urlPrev1 = location.href.replace(/\//g, "%2F").split('#')[1];
+        location.href='/#/login/?next='+urlPrev1;
+      }
       $scope.logout = function(eitem) {
         if (window.confirm('确认退出吗？')) {
-          $scope.isLogin = false;
-          BuyService.logInOrOut.logout().then(function(jsn) {
-            var urlPrev = location.href.replace(/\//g, "%2F").split('#')[1];
-            if(urlPrev.indexOf('login')<0){
-              location.href='/#/login/?next='+urlPrev;
-            }
-            
-          })
+          document.cookie="isLogin="+0;
+          var urlPrev = location.href.replace(/\//g, "%2F").split('#')[1];
+          if(urlPrev.indexOf('login')<0){
+            location.href='/#/login/?next='+urlPrev;
+          }
         }
           
       };
@@ -43,9 +31,10 @@ angular.module('buyLogInOrOutController', [])
       };
       $scope.login = function(eitem) {
         BuyService.logInOrOut.login({
-          "login_name": eitem.login_name,
-          "pswd": eitem.pswd
+          "username": eitem.login_name,
+          "password": eitem.pswd
         }).then(function(jsn) {
+          document.cookie="isLogin="+1;
           if (jsn.status === 1) {
             ngDialog.close();
             $scope.isLogin = true;
@@ -70,6 +59,14 @@ angular.module('buyLogInOrOutController', [])
           relUrl = relUrl.split("?")[0];
         }
         return relUrl;
+      }
+      function getCookie(name)
+      {
+      var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+      if(arr=document.cookie.match(reg))
+      return unescape(arr[2]);
+      else
+      return null;
       }
 
     }
