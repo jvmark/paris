@@ -11,15 +11,15 @@ angular.module('myChangeStuInfoController', [])
       $scope.updateStuInfo = function(){
         BuyService.student.saveStuInfo({
           "id": window.localStorage.getItem('userid'),
-          "sno": $scope.editStu.sno,
-          "name": $scope.editStu.name,
-          "sex": $scope.editStu.sex,
-          "age": $scope.editStu.age,
-          "nation": $scope.editStu.nation,
-          "major": $scope.editStu.major,
-          "className": $scope.editStu.className,
-          "phoneNumber": $scope.editStu.phoneNumber,
-          "password": $scope.editStu.password,
+          "sno": $scope.stu.sno,
+          "name": $scope.stu.name,
+          "sex": $scope.stu.sex,
+          "age": $scope.stu.age,
+          "nation": $scope.stu.nation,
+          "major": $scope.stu.major,
+          "className": $scope.stu.className,
+          "phoneNumber": $scope.stu.phoneNumber,
+          "password": $scope.stu.password
         }).then(function(jsn) {
           alert('成功');
           // location.reload();

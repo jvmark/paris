@@ -32,21 +32,13 @@
                         </tr>
                       </thead>
                       <tbody role="alert" aria-live="polite" aria-relevant="all">
-                        <tr class="odd">
-                          <td>12</td>
-                          <td class="sorting_1">荣光</td>
-                          <td>ios开发</td>
-                          <td>深圳</td>
-                          <td><a target="_blank" class="btn btn-primary" href="javascript:;" ng-click="edit()" data-type="topic">编辑</a>
-                          <a target="_blank" class="btn btn-primary audit_topic_block" href="javascript:;" ng-click="delete()" data-type="topic" style="margin-left: 20px;">删除</a></td>
-                        </tr>
-                        <tr class="odd" ng-repeat="photo in photo.docs">
-                          <td>{{photo.id}}</td>
-                          <td class="sorting_1"></td>
-                          <td>{{photo.msg}}</td>
-                          <td>{{photo.status}}</td>
-                          <td><a target="_blank" class="btn btn-primary" href="javascript:;" ng-click="edit()" data-type="topic">编辑</a>
-                          <a target="_blank" class="btn btn-primary audit_topic_block" href="javascript:;" ng-click="delete()" data-type="topic" style="margin-left: 20px;">删除</a></td>
+                        <tr class="odd" ng-repeat="job in jobList">
+                          <td>{{job.id}}</td>
+                          <td class="sorting_1">{{job.companyName}}</td>
+                          <td>{{job.positionName}}</td>
+                          <td>{{job.city}}</td>
+                          <td><a target="_blank" class="btn btn-primary" href="javascript:;" ng-click="edit(job)" data-type="topic">编辑</a>
+                          <a target="_blank" class="btn btn-primary audit_topic_block" href="javascript:;" ng-click="delete(job)" data-type="topic" style="margin-left: 20px;">删除</a></td>
                         </tr>
                       </tbody>
                     </table>
@@ -56,7 +48,7 @@
               </div>
             </div>
             <!-- angular 分页组件  只提供上下翻页 -->
-            <div ng-include src="'/static/angular/js/include/prevnextpaginator.html'"></div>
+            <!-- <div ng-include src="'/static/angular/js/include/prevnextpaginator.html'"></div> -->
           </div>
         </div>
       </div>
@@ -66,24 +58,24 @@
 <div>
 </div>
 <script type="text/ng-template" id="editTemp">
-<form class="da-form da-form-inline" ng-model="jobInfo">
+<form class="da-form da-form-inline" ng-model="editJob">
   <div class="da-form-row">
-    公司名称：<input type="text" ng-model="jobInfo.companyName">
+    公司名称：<input type="text" ng-model="editJob.companyName">
   </div>
   <div class="da-form-row">
-    所在城市：<input type="text" ng-model="jobInfo.city">
+    所在城市：<input type="text" ng-model="editJob.city">
   </div>
   <div class="da-form-row">
-    职位名称：<input type="text" ng-model="jobInfo.positionName">
+    职位名称：<input type="text" ng-model="editJob.positionName">
   </div>
   <div class="da-form-row">
-    职位描述：<input type="text" ng-model="jobInfo.description">
+    职位描述：<input type="text" ng-model="editJob.description">
   </div>
   <div class="da-form-row">
-    学历限制：<input type="text" ng-model="jobInfo.diplomaLimit">
+    学历限制：<input type="text" ng-model="editJob.diplomaLimit">
   </div>
   <div class="da-form-row">
-    薪资范围：<input type="text" ng-model="jobInfo.minSalary">－<input type="text" ng-model="jobInfo.maxSalary">
+    薪资范围：<input type="text" ng-model="editJob.minSalary">－<input type="text" ng-model="editJob.maxSalary">
   </div>
   <div class="btn-row">
     <input value="添加" type="submit" class="btn btn-success" ng-click="updateJobInfo();" style="float:left;">

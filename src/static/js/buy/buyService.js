@@ -48,6 +48,11 @@ angular.module('buyService', [])
             return data_;
           });
         },
+        getMyComInfo: function(params_) {
+          return BaseService.get('/napi/company/by_id/', {params: params_}).then(function(data_) {
+            return data_;
+          });
+        },
         delComInfo: function(params_) {
           return BaseService.post('/napi/company/delete/', params_).then(function(data_) {
             return data_;
@@ -55,13 +60,13 @@ angular.module('buyService', [])
         }
       },
       job: {
-        addJobInfo: function(params_) {
-          return BaseService.get('/napi/recruitment/all/', {params: params_}).then(function(data_) {
+        saveJobInfo: function(params_) {
+          return BaseService.post('/napi/recruitment/save/', params_).then(function(data_) {
             return data_;
           });
         },
         getJobInfoForCom: function(params_) {
-          return BaseService.get('/napi/recruitment/all/', {params: params_}).then(function(data_) {
+          return BaseService.get('/napi/recruitment/by_companyid/', {params: params_}).then(function(data_) {
             return data_;
           });
         },
@@ -70,13 +75,8 @@ angular.module('buyService', [])
             return data_;
           });
         },
-        editJobInfo: function(params_) {
-          return BaseService.get('/napi/recruitment/all/', {params: params_}).then(function(data_) {
-            return data_;
-          });
-        },
         delJobInfo: function(params_) {
-          return BaseService.get('/napi/recruitment/all/', {params: params_}).then(function(data_) {
+          return BaseService.post('/napi/recruitment/delete/', params_).then(function(data_) {
             return data_;
           });
         }

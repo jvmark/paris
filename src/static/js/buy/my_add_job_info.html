@@ -19,9 +19,6 @@
               <div class="da-form da-panel-content da-form-container">
                 <form class="da-form da-form-inline">
                   <div class="da-form-row">
-                    公司名称：<input type="text" ng-model="job.companyName">
-                  </div>
-                  <div class="da-form-row">
                     所在城市：<input type="text" ng-model="job.city">
                   </div>
                   <div class="da-form-row">
@@ -36,8 +33,11 @@
                   <div class="da-form-row">
                     薪资范围：<input type="text" ng-model="job.minSalary">－<input type="text" ng-model="job.maxSalary">
                   </div>
+                  <div class="da-form-row">
+                    备注：<input type="text" ng-model="job.extra">
+                  </div>
                   <div class="btn-row">
-                    <input value="添加" type="submit" class="btn btn-success" ng-click="updateSpu();" style="float:left;">
+                    <input value="添加" type="submit" class="btn btn-success" ng-click="addJobInfo();" style="float:left;">
                   </div>
                 </form>
               </div>
