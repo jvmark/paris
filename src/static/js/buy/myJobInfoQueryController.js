@@ -17,11 +17,11 @@ angular.module('myJobInfoQueryController', [])
         });
       }
       $scope.forDetail = function(eitem) {
-        $scope.editJob1 = angular.copy(eitem);
+        $scope.editJob2 = angular.copy(eitem);
         $scope.updatetmp = eitem;
         //打开对话框
         ngDialog.open({
-          template: 'editTemp',
+          template: 'DetailTemp',
           scope: $scope,
           disableAnimation: true,
         });
